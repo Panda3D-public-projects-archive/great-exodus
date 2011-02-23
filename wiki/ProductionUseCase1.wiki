@@ -1,0 +1,12 @@
+#summary First use case for production
+#labels Phase-Design
+
+= Introduction =
+
+This use case quickly describes the first scenario that describes the production aspect of the game.
+
+The universe has galaxies, consisting of planetary systems which host planets. Within each planetary system, there are stations that can produce goods. In this scenario, there is no trading, only production.
+
+= Details =
+
+ * to be developed

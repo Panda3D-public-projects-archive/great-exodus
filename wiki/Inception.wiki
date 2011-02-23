@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary First document describing the project "projectX", Inception phase
 #labels Phase-Requirements
 
 = Description du document =

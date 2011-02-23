@@ -1,0 +1,40 @@
+#summary First document describing the project "projectX", Inception phase
+#labels Phase-Requirements
+
+= Description du document =
+  * Objet : Rapport de première réunion du projet "X"
+  * Date : 17 Février 2011, 17h-20h
+  * Lieu : Bureau de Karim, Saclay
+  * Présents : K. Ammar, B. Dehaye, C. Dieudonné, J. Dubois (more or less…)
+  * Résumé : L'objectif de cette réunion est de mettre au point une base commune pour le projet temporairement appelé "projet X".
+
+=Généralités=
+L’équipe initiale de concepteurs/développeurs comprend localement K. Ammar, B. Dehaye, C. Dieudonné, J. Dubois, et à distance F. Dang. Le langage choisi pour développer le cœur du jeu serait dans un premier temps Python. Une version de ce langage est à définir.
+Ce projet est un jeu potentiellement multijoueur, dont l’univers d’appartenance est l’espace et la science-fiction. Le jeu consisterait en la simulation d'un univers où le joueur évoluerait en tant que personnage. Le jeu est hybride, mêlant potentiellement gestion, stratégie et action. Après discussions, le jeu se situerait entre un X3 et Command and Conquer.
+La vue serait centrée sur le joueur, avec la liberté de voir autour dans le secteur où il se trouve. Plus libre que X3, mais moins que dans un jeu de stratégie. La vue serait 2D dans un premier temps, puis potentiellement 3D. L'idée d'une vue hybride 2D/3D a été également évoquée. La priorité est la 2D vue du dessus pour le moment. L'autre priorité est de trouver un titre. 
+Liste des points importants: 
+  # Système économique autonome, robuste, et temps réel. Le joueur intéragira avec ce dernier, aura une influence, et sera influencé.
+  # Le joueur est un héros avec visualisation centrée sur lui. Meilleure immersion, et implication du joueur dans l'univers.
+  # Il y aura des combats, dont la gestion est à définir. Temps réel-nerveux ou par tour-tactique?
+  # Le jeu aura un mode campagne avec des missions principales/histoire et secondaires, et un mode escarmouche avec des défis.
+
+=Vue du domaine économique=
+
+Figure 1 : Vu du domaine pour l'économie
+Nous représentons la partie économique du jeu par une vue en étages de l'univers. L'unité élémentaire est la station/planète. Elle produit des ressources de bases ou des produits évolués (qui sont des ressources aussi). Ces éléments de base sont inclus dans un système planétaire, secteur élémentaire de la galaxie. Le système planétaire possèdera au plus 10 planètes. La galaxie peut posséder au plus 50 systèmes planétaires. Un univers possède quant à lui 10 galaxies max.
+Système économique
+L'économie doit être temps réel, robuste, et évoluante. A la base de ce système, 3 ressources élémentaires alimenteraient tout. Les ressources évoluées (usines, vaisseaux, armes, éléments plus fins, ...) seraient limitées à 100. Les ressources de bases peuvent être interchangées, moyennant un taux de conversion. Chaque corps de production aura un maximum de stock, et un taux de production.
+Les prix sont gérés par un marché dynamique. Pour limiter les fluctuations, il y aura des bornes supérieures et inférieures pour les prix de chaque ressource. Pour chaque usine/station/planète, le prix de la ressource dépendra de sa disponibilité par rapport au stock maximum autorisé, et les bornes inférieures et supérieures galactiques. Un stock plein implique un prix minimal, et un stock vide un prix de vente maximum.
+
+=Prochaines actions=
+Il faut développer les 3 autres axes de la même manière que l’économie. Peut-être d’autres axes sont à identifier. L’interface graphique, même si non cruciale, peut être réfléchie. En particulier, les technologies (PyQT ?). On doit aussi formaliser le langage, et environnement de dév + dépots de codes. Enfin, des scénarios (use-case) représentant le jeu doivent être établis, de l’ordre de la dizaine ou vingtaine. Ces scénarios doivent répondre oui aux trois questions suivantes : 
+  # Est-il important fonctionnellement ? (principe du boss qui nous poserait cette question : si cela ne l’est pas, pas la peine de lui en parler. Exemple : « qu’avez-vous fait toute la journée » ; réponse : « me logger dans le jeu » => failed !)
+  # Ajoute-t-il une valeur au programme, suite à la demande d’un autre acteur, et réalisée par un seul acteur ? (Principe du commercial qui effectuerait une tâche donnée en quelques minutes ou une heure, pas plus : faire tourner le jeu sur les plans commerciaux et combats + histoire en même temps est fait par plusieurs acteurs « commerciaux », donc failed !)
+  # Granularité pas trop fine ? (le test ne doit pas être trop peu représentatif : « effacer une ligne dans une base de données » par exemple : failed !)
+Ces scénarios doivent être rédigés en 5-6 lignes, pour décrire un use-case. Si on a ça, c’est déjà bien ! Aussi, à partir des textes retranscrits, on peut appliquer la vue de domaine à d’autres éléments du jeu, en identifiant les termes-clés (planète, ressource, bourse, stock, …) pour établir d’autres graphes grossiers de vue de domaine.
+A compléter : répartition des use-case
+  # Economie : K. Ammar, B. Dehaye, J. Dubois
+  # Visu, interface graphique : C. Dieudonné
+  # Combats : K. Ammar, C. Dieudonné
+  # Histoire : B. Dehaye, C. Dieudonné, J. Dubois
+Prochaine réunion à prévoir rapidement !

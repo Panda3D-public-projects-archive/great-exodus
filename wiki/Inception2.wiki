@@ -1,0 +1,45 @@
+#summary Second document describing the project "Great Exodus". Use-case inside. Inception phase 2.
+#labels Phase-Requirements
+
+= Introduction =
+
+  * Object : Second meeting of Inception phase report
+  * Date : 02-23-2011, 11h30-13h30
+  * Place : Ben&Cyril office, Saclay
+  * Attendants : K. Ammar, B. Dehaye, C. Dieudonné, J. Dubois, L. Naymeh, O. Senninger
+  * Summary : The topic of this meeting was the creation and choice of use-cases that will represent the game. We also chose a title for the project : Great Exodus.
+
+= Use cases =
+We established a list of the essential use cases for the game. They cover the economic, diplomatic and combat aspect of the game. Here is a list of the topics, which needs to be further developped :
+  # Production
+    # ProductionUseCase1 : Resources and products production at the universe scale
+  # Artificial Intelligence
+    # Trading
+      # ArtificialIntelligenceUseCase1 : A commercial agent tries to find the best profits it can make out of a planetary system
+      # ArtificialIntelligenceUseCase2 : A commercial agent attached to a planet/station/factory tries to sell this the products of this station and tries to buy resources for this station
+    # Pathfinding
+      # ArtificialIntelligenceUseCase3 : A commercial agent is docked at a station. It will navigate from this station to another. In between, there are obstacles to avoid
+  # Player Interface
+    # PlayerInterfaceUseCase1 : The player wants to move his/her ships
+    # PlayerInterfaceUseCase2 : The player wants to show the map, with information about objects within his/her range
+    # PlayerInterfaceUseCase3 : The player wants to buy and sell things (resources/ships) on a station/planet
+    # PlayerInterfaceUseCase4 : The player can save the game manually, and the game does it automatically
+  # Combat
+    # CombatUseCase1 : A ship may be attacked and destroyed
+    # CombatUseCase2 : A ship may be boarded and captured
+    # CombatUseCase3 : A ship contains several systems / subsystems
+    # CombatUseCase4 : The player may be attacked by a foe, and possibly destroyed. The game is consequently lost
+  # Diplomacy
+    # DiplomacyUseCase1 : The game offers a diplomacy interface
+  # Technology
+    # TechnologyUseCase1 : The player has access to a technology tree
+    # TechnologyUseCase2 : The player and his/her crew can gain xp
+The proposed hierarchy is yet to be discussed, and represents a first draft of the main characteristics of the game.
+The next tasks we need to do is further develop each of the use cases, in a paragraph of around 5-6 lines, describing an actual scenario, and not a mere expected feature. I propose the creation of a Wiki page for each of the scenarii.
+
+= Next tasks =
+  * We need to choose the most critical use cases from the proposed list, to start a first iteration for the project. This iteration will consist in a short elaboration (conception) phase, followed by a construction (development) phase. Iterations are timeboxed (constrained by time), and we could take 3 weeks as the first iteration duration. It will start on 28th, February 2011, and finish on 21st, March 2011. At this time, we will have some working use cases. To choose which ones are going to be first developed, we may use this doodle : [http://www.doodle.com/uwety5za43mtuad7]. We should quickly fill this doodle, so that we can meet on Friday 25th, February 2011.
+  * Another thing we need to discuss is the technical side of the project : coding language, frameworks, IDE, repository organisation, etc...
+
+= Next Meeting =
+Next meeting is scheduled to be on Friday 25th, February 2011, at Saclay.

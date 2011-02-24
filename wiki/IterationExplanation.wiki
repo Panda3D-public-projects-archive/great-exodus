@@ -1,0 +1,36 @@
+#summary This page explains how one iteration of the project works
+#labels Phase-Requirements
+
+= Introduction =
+
+Here is the formalization of how one iteration of the project should work.
+
+= Tasks=
+
+One iteration is composed of several tasks:
+  # For 2 days of the iteration, do *UML and requirements analysis*. More than 2 days is a bad idea.
+  # Then *start developing*, while still slightly evolving the UML. Using programming feedback, UML will evolve toward something better, and helps the team to comprehend what was meant when programming.
+  # A *lot of testing* must occur : unit, acceptance, load, usability, ...
+  # Close to the end, the feasability of the targeted development will be studied and adjusted to a maybe more realistic aim, so that we get a *finished  product at the end of the iteration* (or close to).
+
+= Requirements =
+
+Requirements involve a lot of artifacts, which can be listed here : 
+  * *Use-Case Models* : a set of typical scenarios of using a system. It is essentially functional.
+  * *Supplementary Specification* : Everything not in the Use-Case. Performance, licencing, functional features expected and not expressed in a Use-Case. It may be reports, documentation, packaging, supportability, ...(like this wiki page ;-)?)
+  * *Glossary* : Dictionnary that may hold terms, definitions, values allowed, etc... about the project.
+  * *Vision* : High-Level requirements elaborated in the Use-Case Model and Supplementary Specification. Summarizes the project's big ideas.
+  * *Domain Rules* : capture long-living ideas that transcend the project. Could be tax for example, in a business project.
+
+= UML Diagrams =
+The kind of diagrams awaited may be, in the following order and if necessary : 
+  # Use case diagrams (Global behavior of the program)
+  # Domain Models (Global objects of the domain, not explicit classes, no variables or methods inside an object, etc)
+  # Sequence Diagrams (Used for interactions between actors, global objects, ...)
+  # System Contracts (What needs to be done for one function : starting state and ending state, like a black box)
+  # Package Diagrams (Used for High-level modelization)
+  # Communication Diagrams (Used for high to mid-level modelization, close to sequence diagrams, in free 2D, not columns)
+  # Class Diagrams (Essential to get a good idea of the actual implementation of the program)
+
+Later, each diagram will be further developed in a dedicated wiki page. For the time being, a quick look on the web may help understand the purpose and usage of each diagram type.
+Remember, UML is really helpful for you and to communicate among the team. But if you have limited skills, then raw graphs and diagrams may still prove useful, even if they do not entirely respect the UML standard.

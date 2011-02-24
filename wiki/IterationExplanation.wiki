@@ -16,7 +16,7 @@ One iteration is composed of several tasks:
 = Requirements =
 
 Requirements involve a lot of artifacts, which can be listed here : 
-  * *Use-Case Models* : a set of typical scenarios of using a system. It is essentially functional.
+  * *UseCases Models* : a set of typical scenarios of using a system. It is essentially functional.
   * *Supplementary Specification* : Everything not in the Use-Case. Performance, licencing, functional features expected and not expressed in a Use-Case. It may be reports, documentation, packaging, supportability, ...(like this wiki page ;-)?)
   * *Glossary* : Dictionnary that may hold terms, definitions, values allowed, etc... about the project.
   * *Vision* : High-Level requirements elaborated in the Use-Case Model and Supplementary Specification. Summarizes the project's big ideas.

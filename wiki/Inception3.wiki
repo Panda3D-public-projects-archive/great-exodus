@@ -7,7 +7,7 @@
     * Date : 02-24-2011, 11h45-13h
     * Place : Rest. 3, Saclay
     * Attendants : K. Ammar, B. Dehaye, C. Dieudonné, J. Dubois, L. Naymeh
-    * Summary : The topic of this meeting was choices of critical use-cases for the game. 
+    * Summary : The topic of this meeting was the election of critical use-cases for the game. 
 
 = Report=
 

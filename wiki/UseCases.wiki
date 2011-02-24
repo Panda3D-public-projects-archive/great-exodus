@@ -9,8 +9,10 @@ This page will present a short description of each use cases. All discussion abo
 = Details =
 We established a list of the essential use cases for the game. They cover the economic, diplomatic and combat aspect of the game. Here is a list of the topics, which needs to be further developped :
 
-  # Production
+  # Production & Technology
     # ProductionUseCase1 : Resources and products production at the universe scale 
+    # TechnologyUseCase1 : The player has access to a technology tree
+    # TechnologyUseCase2 : The player and his/her crew can gain xp 
   # Artificial Intelligence
     # Trading
       # ArtificialIntelligenceUseCase1 : A commercial agent tries to find the best profits it can make out of a planetary system
@@ -18,7 +20,7 @@ We established a list of the essential use cases for the game. They cover the ec
     # Pathfinding
       # ArtificialIntelligenceUseCase3 : A commercial agent is docked at a station. It will navigate from this station to another. In between, there are obstacles to avoid 
   # Player Interface
-    # PlayerInterfaceUseCase1 : The player wants to move his/her ships
+    # PlayerInterfaceUseCase1 : The player wants to move his/her ships (closely linked to ArtificialIntelligenceUseCase3 ... Should we merge them? Need to clarify the difference...)
     # PlayerInterfaceUseCase2 : The player wants to show the map, with information about objects within his/her range
     # PlayerInterfaceUseCase3 : The player wants to buy and sell things (resources/ships) on a station/planet
     # PlayerInterfaceUseCase4? : The player can save the game manually, and the game does it automatically 
@@ -29,6 +31,3 @@ We established a list of the essential use cases for the game. They cover the ec
     # CombatUseCase4 : The player may be attacked by a foe, and possibly destroyed. The game is consequently lost 
   # Diplomacy
     # DiplomacyUseCase1 : The game offers a diplomacy interface 
-  # Technology
-    # TechnologyUseCase1 : The player has access to a technology tree
-    # TechnologyUseCase2 : The player and his/her crew can gain xp 

@@ -1,0 +1,55 @@
+*Scope*: Game
+
+*Level*: subfunction
+
+*Primary Actor*: Move an object
+
+*Stakeholders and Interests*:
+
+    * Game : wants to move stations
+    * Player : wants to move his ships
+    * IA : wants to move his ships
+
+*Preconditions*: The player has to have enough fuel to do the travel
+
+*Success Guarantee (or Postconditions)*: the object has reached the destination
+
+*Main Success Scenario (or Basic Flow)*:
+
+   # Player or IA or Game ask for a move
+   # They choose the destination with coordinates or planete name or station name or favorite position
+   # The destination is checked if it exists
+   # The destination is checked if it is reachable
+   # The way is computed in a surface reachable during a time step
+   # The object follow the calculated way toward the destination
+
+
+*Extensions (or Alternative Flows*):
+
+    *a. Player ask for a move which does not exist
+
+   # Player ask for a move
+   # They choose the destination with coordinates or planete name or station name or favorite position
+   # The destination is checked if it exists
+   # Player Status displays a message to the Player : "The destinaton does not exist" 
+   
+
+    *b. Player ask for a move which is not reachable
+
+   # Player or IA or Game ask for a move
+   # They choose the destination with coordinates or planete name or station name or favorite position
+   # The destination is checked if it exists
+   # The destination is checked if it is reachable
+* Player Status displays a message to the Player* : "The destinaton does not reachable" 
+
+*Special Requirements*:
+
+    * The game should compute very quickly the way toward the destination. 
+
+*Technology and Data Variations List*: None?
+
+*Frequency of Occurence*: Once every 1 minutes on average.
+
+*Open Issues*:
+
+ What kind of algorithm system should we use? (Dijkstra, A`*`) 

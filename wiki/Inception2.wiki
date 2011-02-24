@@ -34,7 +34,7 @@ We established a list of the essential use cases for the game. They cover the ec
   # Technology
     # TechnologyUseCase1 : The player has access to a technology tree
     # TechnologyUseCase2 : The player and his/her crew can gain xp
-The proposed hierarchy is yet to be discussed, and represents a first draft of the main characteristics of the game.
+The proposed hierarchy is yet to be discussed, and represents a first draft of the main characteristics of the game. UseCases will centralize all further developements concerning use cases. Inception2 is only useful as a report of this meeting.
 The next tasks we need to do is further develop each of the use cases, in a paragraph of around 5-6 lines, describing an actual scenario, and not a mere expected feature. I propose the creation of a Wiki page for each of the scenarii.
 
 = Next tasks =

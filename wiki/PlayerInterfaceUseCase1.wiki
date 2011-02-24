@@ -1,4 +1,6 @@
+#summary First use case for Player Interface
 #labels FirstusecaseforPlayerInterface
+
 *Scope*: Game
 
 *Level*: subfunction

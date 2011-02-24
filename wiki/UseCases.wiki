@@ -3,7 +3,7 @@
 
 = Introduction =
 
-This page will present a short description of each use cases. All discussion about the use case should happen here. Each use case shall be further developed in its own wiki page.
+This page will present a short description of each use cases. All discussion about the use case should happen here. Each use case shall be further developed in its own wiki page with this model in mind : UseCaseTemplate .
 
 
 = Details =
@@ -31,3 +31,5 @@ We established a list of the essential use cases for the game. They cover the ec
     # CombatUseCase4 : The player may be attacked by a foe, and possibly destroyed. The game is consequently lost 
   # Diplomacy
     # DiplomacyUseCase1 : The game offers a diplomacy interface 
+
+The template used to further develop each use case may be found at this wiki page : UseCaseTemplate .

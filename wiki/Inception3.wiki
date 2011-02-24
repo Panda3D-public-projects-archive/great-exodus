@@ -1,0 +1,28 @@
+#summary Third and last meeting for the Inception phase.
+
+= Introduction =
+
+    * Object : Third meeting of Inception phase report
+    * Date : 02-24-2011, 11h45-13h
+    * Place : Rest. 3, Saclay
+    * Attendants : K. Ammar, B. Dehaye, C. Dieudonné, J. Dubois, L. Naymeh
+    * Summary : The topic of this meeting was choices of critical use-cases for the game. 
+
+= Report=
+
+During this meeting, we discussed the results from the doodle previously started in Inception2 .
+The five most critical use cases are (with candidates to manage them) : 
+  # Resources and goods production at the Universe scale. (Jérôme)
+  # The player wants to move his/her ships. (Laurent)
+  # The player wants to buy/sell things on a station/planet. (Benjamin)
+  # A ship may be attacked or destroyed. (Cyril)
+  # The player wants to show the map. (Karim)
+
+Each candidate will develop following the UseCaseTemplate his/her use case quickly, and post it on this wiki. Then, if there is no objection from the team, the candidate may start the first iteration of the project. One iteration is described here : IterationExplanation .
+
+= Next Tasks =
+Each candidate should advance his/her use case respecting the IterationExplanation plan, and possibly refine the description of his/her use case reachable from UseCases .
+As a recall from Inception2, the starting date of the first iteration will be the 28th, February 2011, and the ending date is 21st, March 2011.
+
+= Next Meeting =
+We should hold a meeting during the last week of the first iteration, say around 14th to 18th, March 2011. In this meeting, we will see how well we advanced, and how we could prepare the merging of each package.

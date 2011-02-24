@@ -1,0 +1,88 @@
+#summary Template to use to develop in detail each use case
+#labels Phase-Design
+
+= Introduction =
+
+Here is a proposal of template to use to develop and explain each use case in detail.
+
+
+= Basic Sections=
+
+|| *Use Case Section* || *Comment* ||
+|| *Use Case Name* || Start with a verb ||
+|| *Scope* || The system under design ||
+|| *Level* || "user-goal" or "subfunction" ||
+|| *Primary Actor* || Calls on the system to deliver its services ||
+|| *Stakeholders and Interests* || Who care about this use case and what do they want? ||
+|| *Preconditions* || What must be true on start, _and_ worth telling the reader? ||
+|| *Success Guarantee* || What must be true on successful completion, _and_ worth telling the reader. ||
+|| *Main Success Scenario* || A typical, unconditionnal happy path scenario of success ||
+|| *Extensions* || Alternate scenarios of success or failure ||
+|| *Special Requirements* || Related non-functional requirements. ||
+|| *Technology and Data Variations List* || Varying I/O methods and data formats ||
+|| *Frequency of Occurence* || Influences investigation, testing and timing of implementation ||
+|| *Miscellaneaous* || Such as open issues ||
+
+
+= Example =
+
+Here is an example to illustrate (my understanding of) one use case:
+
+*Scope:* Game
+
+*Level:* subfunction
+
+*Primary Actor:* Savegame Manager
+
+*Stakeholders and Interests:*
+  * Game : runs the simulation
+  * Player : wants transparent automatic savegames done when docking at a station, or when close to a critical time of the game (before very hard mission, ...)
+  * Player Status : Pauses the game temporarily to allow the Savegame Manager to do its duty.
+  * Savegame Manager : wants to save the game and player status automatically when needed.
+  * Automatic savegame slot : wants to keep new savegame. Needs to erase/replace previous savegame.
+  * Internal Automatic Slot: holds a shot/save /serialization of the game state at the save time for a automatic savegame.
+
+*Preconditions:* The player just docked at a station and/or is nearing a critical time for his/her survival, before a very hard mission.
+
+*Success Guarantee (or Postconditions):* The game is saved. The player can transparently pursue his/her duty without any disturbances. Automatic savegame slot is updated.
+
+*Main Success Scenario (or Basic Flow):*
+  # Player arrives/dock at a station
+  # Player Status signifies the Savegame Manager the need to do an automatic save
+  # Player Status displays a message : "Savegame in progess ..."
+  # Savegame Manager asks the Automatic Save Slot to save
+  # Automatic Save Slot moves/erases the previous Internal Automatic Slot
+  # Automatic Save Slot saves the game inside the Internal Automatic Slot
+  # Automatic Save Slot signifies Savegame Manager it finished
+  # Savegame Manager signifies Player Status it finished
+  # Player Status stops displaying the "Savegame in progress ..." message
+  # Player can pursue his/her actions
+
+*Extensions (or Alternative Flows):*
+  `*a.` Player is attacked and dies. _An asterisk is used to signify this event can happen anytime during basic flow_
+    # Player Status signifies the Savegame Manager to stop the save process
+    # Savegame Manager signifies the Automatic Save Slot to stop the saving process
+    # Automatic Save Slot stops the saving process
+    # Automatic Save Slot restores the previous savegame in the Internal Automatic Slot
+    # Automatic Save Slot signifies Savegame Manager the restoration success
+    # Savegame Manager signifies Player Status the success of the savegame restoration
+    # Player Status displays a message to the Player : "Automatic savegame cancelled..."
+
+  6.a. There is not enough memory on disk. _We use the first number to display the reference to the basic flow, and add a character (a-z) to show an alternate path_
+    # Automatic Slave Slot sends an error to the Savegame Manager.
+    # Savegame Manager sends an error to Player Status.
+    # Player Status displays an error message to the Player.
+    # The Player chooses to keep the game running or not as in ErrorUseCase
+    # The Game keeps on running or stops cleanly.
+
+*Special Requirements:* 
+  * The game should save very quickly, within 5 seconds.
+
+*Technology and Data Variations List:*
+None?
+
+*Frequency of Occurence:* Once every 5 minutes on average.
+
+*Open Issues:*
+  * How will the system behave when disk is full?
+  * What kind of save system should we use? (xml, binary, serialization...?)

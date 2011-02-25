@@ -1,0 +1,11 @@
+#summary This page explains the supplementary specifications of the project
+#labels Phase-Requirements,Phase-Implementation
+
+= Programming rules =
+
+http://www.biologeek.com/bonnes-pratiques,conferences,django,python,traduction/bonnes-pratiques-et-astuces-python/
+
+
+= Version of Python =
+
+Python 3.2

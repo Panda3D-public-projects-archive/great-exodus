@@ -5,12 +5,12 @@
 
 *Level*: subfunction
 
-*Primary Actor*: Move an object
+*Primary Actor*: Moving Manager
 
 *Stakeholders and Interests*:
 
     * Game : wants to move stations
-    * Player : wants to move his ships
+    * Player : wants to move his/her ships
     * IA : wants to move its ships
 
 *Preconditions*: The player has to have enough fuel to do the travel

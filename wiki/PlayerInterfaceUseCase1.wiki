@@ -11,7 +11,7 @@
 
     * Game : wants to move stations
     * Player : wants to move his ships
-    * IA : wants to move his ships
+    * IA : wants to move its ships
 
 *Preconditions*: The player has to have enough fuel to do the travel
 

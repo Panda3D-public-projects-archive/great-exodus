@@ -43,7 +43,7 @@
   # They choose the destination with coordinates or planete name or station name or favorite position
   # The destination is checked if it exists
   # The destination is checked if it is reachable
-* Player Status displays a message to the Player* : "The destinaton does not reachable" 
+  # Player Status displays a message to the Player : "The destinaton does not reachable" 
 
 *Special Requirements*:
 

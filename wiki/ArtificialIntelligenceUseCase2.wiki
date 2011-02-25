@@ -1,4 +1,5 @@
 #summary Second Use Case for Arificial Intelligence
+#labels Phase-Design
 
 *Scope:* Game
 
@@ -8,53 +9,33 @@
 
 *Stakeholders and Interests:*
   * Game : runs the simulation
-  * Player : a commercial agent is attached to a planet/station/factory and wants to buy ressources for the statition and sell the goods produced by the station
-  * Player Status : Pauses the game temporarily to allow the Savegame Manager to do its duty.
-  * Savegame Manager : wants to save the game and player status automatically when needed.
-  * Automatic savegame slot : wants to keep new savegame. Needs to erase/replace previous savegame.
-  * Internal Automatic Slot: holds a shot/save /serialization of the game state at the save time for a automatic savegame.
+  * Player : a commercial agent is attached to a planet/station/factory and wants to buy ressources for the statition and sell the goods produced by the station.
+  * Player Status : updates the ressources.
+  * Trade Manager : manages all trade actions.
 
-*Preconditions:* The player just docked at a station and/or is nearing a critical time for his/her survival, before a very hard mission.
+*Preconditions:* ressources to exchange exist.
 
-*Success Guarantee (or Postconditions):* The game is saved. The player can transparently pursue his/her duty without any disturbances. Automatic savegame slot is updated.
-
+*Success Guarantee (or Postconditions):* The agent can buy and sell ressources and goods.
 *Main Success Scenario (or Basic Flow):*
-  # Player arrives/dock at a station
-  # Player Status signifies the Savegame Manager the need to do an automatic save
-  # Player Status displays a message : "Savegame in progess ..."
-  # Savegame Manager asks the Automatic Save Slot to save
-  # Automatic Save Slot moves/erases the previous Internal Automatic Slot
-  # Automatic Save Slot saves the game inside the Internal Automatic Slot
-  # Automatic Save Slot signifies Savegame Manager it finished
-  # Savegame Manager signifies Player Status it finished
-  # Player Status stops displaying the "Savegame in progress ..." message
-  # Player can pursue his/her actions
+  # Player can see his/hers/its stocks and those of the station/planet/factory.
+  # Player can exchange goods and ressources.
+  # Stocks are updated.
+  # Player can access commercial data (quantity & cost) of any good and ressource available on each station/planet/factory.
 
 *Extensions (or Alternative Flows):*
-  `*a.` Player is attacked and dies. _An asterisk is used to signify this event can happen anytime during basic flow_
-    # Player Status signifies the Savegame Manager to stop the save process
-    # Savegame Manager signifies the Automatic Save Slot to stop the saving process
-    # Automatic Save Slot stops the saving process
-    # Automatic Save Slot restores the previous savegame in the Internal Automatic Slot
-    # Automatic Save Slot signifies Savegame Manager the restoration success
-    # Savegame Manager signifies Player Status the success of the savegame restoration
-    # Player Status displays a message to the Player : "Automatic savegame cancelled..."
-
-  6.a. There is not enough memory on disk. _We use the first number to display the reference to the basic flow, and add a character (a-z) to show an alternate path_
-    # Automatic Slave Slot sends an error to the Savegame Manager.
-    # Savegame Manager sends an error to Player Status.
-    # Player Status displays an error message to the Player.
-    # The Player chooses to keep the game running or not as in ErrorUseCase
-    # The Game keeps on running or stops cleanly.
+  `*a.` Planet/station/factory is destroyed
+    # Trading process is stopped.
+    # Planet/factory/station stocks are destroyed
 
 *Special Requirements:* 
-  * The game should save very quickly, within 5 seconds.
+  * None
 
 *Technology and Data Variations List:*
-None?
+  * None
 
-*Frequency of Occurence:* Once every 5 minutes on average.
+*Frequency of Occurence:* When required or asked.
 
 *Open Issues:*
-  * How will the system behave when disk is full?
-  * What kind of save system should we use? (xml, binary, serialization...?)
+  * How to give ressources and goods a price?
+  * Limits of the stocks
+  * Is all the Universe known by a player without exploring it?

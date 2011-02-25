@@ -13,7 +13,7 @@
     * Player : wants to move his/her ships
     * IA : wants to move its ships
 
-*Preconditions*: The player has to have enough fuel to do the travel (if we consider the presence of fuel in the game)
+*Preconditions*: The player has to have enough fuel to do the travel (_*if we consider the presence/need of fuel in the game*_)
 
 *Success Guarantee (or Postconditions)*: the object has reached the destination
 
@@ -29,20 +29,20 @@
 
 *Extensions (or Alternative Flows*):
 
-    *a. Player ask for a move which does not exist
+    `*`a. Player ask for a move which does not exist
 
-   # Player ask for a move
-   # They choose the destination with coordinates or planete name or station name or favorite position
-   # The destination is checked if it exists
-   # Player Status displays a message to the Player : "The destinaton does not exist" 
+  # Player ask for a move
+  # They choose the destination with coordinates or planete name or station name or favorite position
+  # The destination is checked if it exists
+  # Player Status displays a message to the Player : "The destinaton does not exist" 
    
 
-    *b. Player ask for a move which is not reachable
+  `*`b. Player ask for a move which is not reachable
 
-   # Player or IA or Game ask for a move
-   # They choose the destination with coordinates or planete name or station name or favorite position
-   # The destination is checked if it exists
-   # The destination is checked if it is reachable
+  # Player or IA or Game ask for a move
+  # They choose the destination with coordinates or planete name or station name or favorite position
+  # The destination is checked if it exists
+  # The destination is checked if it is reachable
 * Player Status displays a message to the Player* : "The destinaton does not reachable" 
 
 *Special Requirements*:

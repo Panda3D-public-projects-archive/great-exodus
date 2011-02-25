@@ -13,7 +13,7 @@
     * Player : wants to move his/her ships
     * IA : wants to move its ships
 
-*Preconditions*: The player has to have enough fuel to do the travel
+*Preconditions*: The player has to have enough fuel to do the travel (if we consider the presence of fuel in the game)
 
 *Success Guarantee (or Postconditions)*: the object has reached the destination
 

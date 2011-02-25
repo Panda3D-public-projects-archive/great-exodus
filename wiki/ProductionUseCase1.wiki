@@ -22,6 +22,7 @@ The universe has galaxies, consisting of planetary systems which host planets. W
   * Output Resource : knows what and how much Input Resources is needed for its production
   * Input Resource : knows what and how much Output Resources it can produce
   * Timer : sends regularily a Production Signal to the designated Production Object
+  * Signals : signifies a change of state of the emitter. _*Need to explicit this somewhere*_
 
 *Preconditions:* The universe's entities (planets, stations, ..) are already created. See ProductionUsecase2 .
 
@@ -36,12 +37,12 @@ The universe has galaxies, consisting of planetary systems which host planets. W
   # Each Production Object increases the Output Resource and decreases the Input Resource using its Production Capacities
   # Restart from 3. until every Output Resource has been once chosen
   # Restart from 2. until Production Object cannot produce anymore : full Output Resource Stock or empty Input Resource Stock
-  # Production Object sends an Empty Input Resources or Full Output Resource signal to its Production Manager.
+  # Production Object sends an Empty Input Resources or Full Output Resource Signal to its Production Manager.
   # Production Manager stops the Production Object timer.
   # Production Manager must have no element producing resources or goods when every Production Objects has sent the signal.
 
 *Extensions (or Alternative Flows):*
-  `*a.` Production Object is destroyed (_*To work on... Prod object is a function, not physical!!!*_)
+  `*a.` Production Object is destroyed (_*To work on... Prod object is a functional object, not physical!!!*_)
     # Production Object sends the Production Manager a signal
     # Production Manager erases the destroyed Production Object
     # UI is refreshed (Map, list of objects, screen)

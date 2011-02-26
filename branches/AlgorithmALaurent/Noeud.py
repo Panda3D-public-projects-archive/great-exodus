@@ -14,19 +14,19 @@ class Point:
         self.x = x
         self.y = y
         
-    def __eq__(self,other):
+    def __eq__(self, other):
         return (self.x == other.x and self.y == other.y)
     
     def __hash__(self):
         return 1
     
     @staticmethod
-    def distance( p1, p2):
-        return sqrt((p1.x-p2.x)**2+(p1.y-p2.y)**2)
+    def distance(p1, p2):
+        return sqrt((p1.x-p2.x)**2 + (p1.y-p2.y)**2)
 
 class Config:
     
-    def __init__(self,xmin,xmax,ymin,ymax,tab,pointDe, pointAr):
+    def __init__(self, xmin, xmax, ymin, ymax, tab, pointDe, pointAr):
         self.xmin = xmin
         self.xmax = xmax
         self.ymin = ymin

@@ -16,6 +16,7 @@
 *Preconditions:* ressources to exchange exist.
 
 *Success Guarantee (or Postconditions):* The agent can buy and sell ressources and goods.
+
 *Main Success Scenario (or Basic Flow):*
   # Player can see his/hers/its stocks and those of the station/planet/factory.
   # Player can exchange goods and ressources.

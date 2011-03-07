@@ -9,7 +9,7 @@
 
 *Stakeholders and Interests:*
   * Game : runs the simulation
-  * Player : a commercial agent is attached to a planet/station/factory and wants to buy ressources for the statition and sell the goods produced by the station.
+  * Player : a commercial agent is attached to a planet/station/factory and wants to buy ressources for the station and sell the goods it produced.
   * Player Status : updates the ressources.
   * Trade Manager : manages all trade actions.
 

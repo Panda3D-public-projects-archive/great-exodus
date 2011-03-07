@@ -11,4 +11,4 @@ http://www.biologeek.com/bonnes-pratiques,conferences,django,python,traduction/b
 Python 3.2 
 
 PyGame only available for *version 2. and 3.1* of Python.
-PyQt availabable for all versions.
+PyQt available for all versions.

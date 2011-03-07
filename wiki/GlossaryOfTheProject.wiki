@@ -8,10 +8,11 @@ The glossary will hold every term definitions, acceptable data ranges, etc... Of
 
 = Terms =
 
+  * *Agent* : Entity able to interact with the Universe. Can either be a human player or an artificial intellingence.
   * *Galaxy* : Set of Planetary Systems. Galaxies may be linked together.
   * *Planet* : Entity that can produce resources. May host some populations.
   * *Planetary System* : Set of Planets. Also hosts Ships and Stations. May be linked to other Planetary Systems.
   * *Ship* : Entity that can move in space. Can store goods and resources as well as people. May be armed to attack other Ships, Stations and Planets.
   * *Station* : Entity that can produce goods from resources.
-  * *Universe* : greatest physical element container of the game. Contains galaxies.
+  * *Universe* : Greatest physical element container of the game. Contains galaxies.
   * *Vessel* : see Ship.

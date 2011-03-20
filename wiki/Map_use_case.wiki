@@ -1,4 +1,4 @@
-#labels UseCaseVisudel’environnementMAPDéplacemententresystèmesolaire
+#labels Phase-Design
 Use Case : Visu de l’environnement /  MAP / Déplacement entre système solaire
 
 

@@ -1,0 +1,41 @@
+#Use Case : Visu de l’environnement /  MAP / Déplacement entre système solaire
+
+Que voit le joueur de son environnement ?
+
+Autour de ses unités (de ses vaisseaux et de ses stations // ou qu’il soit dans l’univers ?) le joueur dispose d’un champ de vision. La taille de ce champ peut dépendre du type de l’unité (un éclaireur à plus de champ qu’un navire commercial)
+ Dans son champ de vision le joueur peu voir tt les caractéristique des vaisseaux et des planètes (arment/chargement…) 
+
+Hors de ce champ la vision du joueur dépend de son statut vis-à-vis du Système Planétaire (SP) :
+•	Allié : le joueur peut voir tt les vaisseaux et stations (leur arment et leur chargement) et tt les planètes (et leur ressources) dans le champ de vision du sp *.
+•	Neutre : le joueur peut voir tt les planètes (et leur ressources) dans le champ de vision du sp 
+•	Hostile : le joueur peut voir uniquement la position des planètes
+
+Tout ce qui n’est pas dans le champ de vision du jouer sera dans un brouillard de guerre.
+
+Champ de vision du sp * : autour de chaque planète et vaisseaux allié du sp il y a un champ de vision (comme pour le champ de vision autour du joueur).
+En plus le sp peu déployer un ensemble de sonde qui lui permettent de surveillé l’espace (1 sonde = un type de vaisseau particulier pas chère avec un grand champ de vision mais fragile)
+
+Bonus : on peut donner à certain vaisseaux la possibilité d’être furtif uniquement vis-à-vis des sondes tant qu’il n’attaque ou exploite rien.
+
+
+
+Que voit le joueur sur la map ?
+
+Plusieurs niveaux de cartes :
+•	Univers : affichage des galaxies et de la position des vaisseaux du joueur ds l’univers. Si passage souris détail sur l’unité.
+•	Galaxie : affichage des systèmes solaire. Si passage souri sur un système affichage macroscopique de ses ressource et des flottes qu’il contient (selon statut du joueur vis-à-vis du sp)
+•	Système solaire : affichage détaillé des planètes / vaisseau / station spatiale. Si passage souri sur un système affichage de ses ressource et des flottes qu’il contient (selon statu du joueur vis-à-vis du sp)
+
+Sur un mini map dans un coin de l’écran le joueur voit st vaisseaux (au centre) st champ de vision et les unités planète ds la zone.
+
+Possibilité de zoomer au sein d’une carte
+
+Comment se déplacé dans le sp?
+Laurent use case
+
+
+Comment se déplacé entre sp?
+Les vaisseaux peuvent être équipé de système de jump qui permetent de se déplacer entre deux système.
+•	Pour jumper le vaisseau doit être immobile pendant qq seconde
+•	Le nombre de jump d’affilé est limité ainsi que leur porté
+•	Le point d’arrivé dans le nouveau sp et aléatoire (ou en partie aléatoire)

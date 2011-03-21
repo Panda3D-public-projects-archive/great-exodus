@@ -1,0 +1,48 @@
+= Introduction =
+
+Ce use-case explique comment un vaisseau peut être abordé et capturé. Si le vaisseau capturé est celui du joueur, alors le jeu peut alors prendre fin.
+
+= Détails =
+
+*Scope:* ???
+
+*Level:* ???
+
+*Primary Actor:* Commandant/Pilot de vaisseau
+
+*Stakeholders and Interests:*
+  * Game : ???
+  * Player : Il peut détruire un adversaire de l'intérieur ou capturer un autre vaisseau pour en prendre le commandement.
+  * Player Status : Commandant / Pilote
+  * Savegame Manager : ???
+  * Automatic savegame slot : ???
+  * Internal Automatic Slot: ???
+
+*Preconditions:* L'acteur principal doit pouvoir s'approcher de sa cible et être à bord d'un vaisseau d'une classe permettant l'abordage. De plus, dans le vaisseau il doit y avoir au moins un membre d'équipage pouvant prendre le contrôle de la cible (pas nécessairement pour la piloter).
+
+*Success Guarantee (or Postconditions):*
+  # La cible a été atteinte et abordée.
+  # Au moins un membre d'équipage a pu s'infiltrer dans la cible.
+  # Si la cible repousse l'attaque, le joueur peut mourir. S'il n'a pas fait partie de l'attaque, il peut s’enfuir.
+  # Si la cible est le joueur et que le vaisseau est capturé, la partie peut prendre fin.
+
+*Main Success Scenario (or Basic Flow):*
+Si le joueur a un vaisseau d'abordage:
+  # Le joueur est à portée d'une cible. Il s'y amarre ou le pénètre. Un/Des membre(s) d'équipage tente(nt) alors d'en prendre le contrôle.
+  # Le joueur est à portée d'une cible. Il l'aborde et en prend le contrôle.
+  # Le joueur est à portée d'une cible. Il l'aborde et tente d'en prendre le contrôle et échoue. S'il a fait partie de l'attaque, la partie peut prendre fin, sinon, il peut s'enfuir.
+  # Le joueur est à la portée d'un vaisseau adverse. L'ennemis l'aborde mais se fait détruire.
+  # Le joueur est à la portée d'un vaisseau adverse. L'ennemis l'aborde et le vaisseau du joueur est capturé. La partie prend fin.
+
+*Extensions (or Alternative Flows):*
+
+*Special Requirements:* 
+
+
+*Technology and Data Variations List:*
+???
+
+*Frequency of Occurence:* Potentiellement tout le temps.
+
+*Open Issues:*
+  * None?

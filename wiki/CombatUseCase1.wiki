@@ -1,0 +1,59 @@
+= Introduction =
+
+Ce use-case explique comment un vaisseau peut attaquer, recevoir des dégats et être détruit. Si le vaisseau détruit est celui du joueur, alors le jeu doit prendre fin.
+
+= Détails =
+
+*Scope:* ???
+
+*Level:* ???
+
+*Primary Actor:* Commandant/Pilot de vaisseau
+
+*Stakeholders and Interests:*
+  * Game : ???
+  * Player : Il peut protéger ses intérêts et/ou détruire un adversaire.
+  * Player Status : Commandant / Pilote
+  * Savegame Manager : ???
+  * Automatic savegame slot : ???
+  * Internal Automatic Slot: ???
+
+*Preconditions:* L'acteur principal doit être suffisamment proche de sa cible, ou alors il  doit pour bouger pour s'en approcher, et avoir des armes ancrée et non désactivée/détruite sur son vaisseau.
+
+*Success Guarantee (or Postconditions):*
+  # Les armes ont pu faire feu et atteindre (selon leurs précisions) leur cible.
+  # Les armes ayant atteints leur cible ont ainsi créer des dégat chez celle-ci.
+  # Si la cible perd la totalité de ses points de vie suite à une attaque, elle est détruite.
+
+*Main Success Scenario (or Basic Flow):*
+  # Le joueur est à portée d'une cible. Il fait feu.
+  # Le joueur est à portée d'une cible. Il fait feu et la cible encaisse des dégâts.
+  # Le joueur est à portée d'une cible. Il fait feu et détruit la cible.
+  # Le joueur est à la portée d'un vaisseau adverse. L'ennemis fait feu et le vaisseau du joueur encaisse des dégâts.
+  # Le joueur est à la portée d'un vaisseau adverse. L'ennemis fait feu et le vaisseau du joueur est détruit. La partie prend fin.
+
+*Extensions (or Alternative Flows):*
+ # Le joueur peut programmer les armes de son vaisseau en différents modes automatiques:
+  * Le joueur peut activer/déactiver ses armes.
+  * Le joueur peut se mettre en mode agressif: les armes font feu dès qu'un vaisseau hostile est à porté.
+  * Le joueur peut se mettre en mode défensif: les armes font feu dès qu'un vaisseau hostile attaque.
+  * Le joueur peut se mettre en mode neutre: les armes ne font feu que si le joueur en a donner l'ordre.
+  * En mode agressif, une poursuite automatique des vaisseaux hostiles peut être ajoutée.
+  * En mode défensif, une cible à défendre peut être donner au vaisseau. Tout vaisseau attaquant la cible (ou le vaisseau lui-même) serra attaqué. L'attaque prend fin dès que le vaisseau hostile cesse son attaque.
+ # Différentes technologie pourront intégrer le processus d'attaque:
+  * Bouclier
+  * Contre-mesure
+  * Systèmes de défense automatiques (ex: anti-missile, anti-aérienne, mines, ...)
+  * Occulteur
+ # Chaque partie du vaisseau a ses propres points de vie. Lorsqu'une partie est détruite, les fonctions du vaisseau en sont affectées.
+
+*Special Requirements:* 
+  * Un certain nombre de vaisseaux (quelques dizaines) peuvent s'attaquer et se détruire sans ralentissement du jeu.
+
+*Technology and Data Variations List:*
+???
+
+*Frequency of Occurence:* Tout le temps.
+
+*Open Issues:*
+  * None?

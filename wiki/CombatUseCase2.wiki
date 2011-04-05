@@ -1,4 +1,4 @@
-#summary [UseCase] Combat: _Abordage_ _&_ _Capture_
+#summary [UseCase] Combat: Abordage & Capture
 #labels Phase-Design,UseCase,Combat
 
 = Introduction =

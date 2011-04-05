@@ -1,3 +1,6 @@
+#summary [UseCase] Combat: Attaque et Défense
+#labels Phase-Design,UseCase,Combat
+
 = Introduction =
 
 Ce use-case explique comment un vaisseau peut attaquer, recevoir des dégats et être détruit. Si le vaisseau détruit est celui du joueur, alors le jeu doit prendre fin.

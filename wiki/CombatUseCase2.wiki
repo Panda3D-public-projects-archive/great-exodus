@@ -1,3 +1,6 @@
+#summary [UseCase] Combat: _Abordage_ _&_ _Capture_
+#labels Phase-Design,UseCase,Combat
+
 = Introduction =
 
 Ce use-case explique comment un vaisseau peut être abordé et capturé. Si le vaisseau capturé est celui du joueur, alors le jeu peut alors prendre fin.

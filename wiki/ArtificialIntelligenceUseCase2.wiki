@@ -1,5 +1,5 @@
 #summary [UseCase] Second Use Case for Arificial Intelligence
-#labels Phase-Design,UseCas,AI
+#labels Phase-Design,UseCase,AI
 
 *Scope:* Game
 

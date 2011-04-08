@@ -1,5 +1,5 @@
 #summary [UseCase] Production of resources/goods
-#labels Phase-Design,UseCase,Ressources
+#labels Phase-Design,UseCase,Ressources,Production
 
 = Introduction =
 

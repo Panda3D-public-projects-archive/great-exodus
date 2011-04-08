@@ -1,5 +1,5 @@
 #summary [Meeting] Second document describing the project "Great Exodus". Use-case inside. Inception phase 2.
-#labels Phase-Requirements
+#labels Phase-Requirements,Meeting
 
 = Introduction =
 

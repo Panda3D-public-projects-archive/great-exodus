@@ -1,5 +1,5 @@
 #summary [Meeting] First document describing the project "projectX", Inception phase
-#labels Phase-Requirements
+#labels Phase-Requirements,Meeting
 
 = Description du document =
   * Objet : Rapport de première réunion du projet "X"

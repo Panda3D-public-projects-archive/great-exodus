@@ -1,4 +1,4 @@
-#summary First document describing the project "projectX", Inception phase
+#summary [Meeting] First document describing the project "projectX", Inception phase
 #labels Phase-Requirements
 
 = Description du document =

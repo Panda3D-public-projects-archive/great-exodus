@@ -1,5 +1,5 @@
-#summary Glossary of the project.
-#labels Phase-Requirements
+#summary [Glossary] Glossary of the project.
+#labels Phase-Requirements,Glossary
 
 = Introduction =
 

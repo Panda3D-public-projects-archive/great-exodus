@@ -1,11 +1,13 @@
-#summary First use case for production : Production of resources/goods
+#summary [UseCase] Production of resources/goods
 #labels Phase-Design
 
 = Introduction =
 
-This use case quickly describes the first scenario that describes the production aspect of the game.
+This use case describes the production aspect of the game.
 
 The universe has galaxies, consisting of planetary systems which host planets. Within each planetary system, there are stations/planets that can produce goods. In this scenario, there is no trading, only production.
+
+First iteration: we create everything necessary to test production. There is no actual physical object creation, no galaxy, etc... There are only production objects and their infrastructure necessary to produce goods/resources.
 
 = Details =
 

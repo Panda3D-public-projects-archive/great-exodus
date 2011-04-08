@@ -1,4 +1,5 @@
 #summary [Meeting] First meeting of the Elaboration phase.
+#labels Meeting
 
 = Introduction =
 

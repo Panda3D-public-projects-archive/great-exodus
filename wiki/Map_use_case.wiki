@@ -1,4 +1,4 @@
-#summary Use Case : Visu de l’environnement /  MAP / Déplacement entre système solaire
+#summary [UseCase] Visu de l’environnement /  MAP / Déplacement entre système solaire
 #labels Phase-Design,UseCase,View
 
 Que voit le joueur de son environnement ?

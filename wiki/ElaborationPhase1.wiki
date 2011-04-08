@@ -1,0 +1,34 @@
+#summary [Meeting] First meeting of the Elaboration phase.
+
+= Introduction =
+
+    * Object : First meeting of the Elaboration phase
+    * Date : 03-22-2011, 11h45-13h
+    * Place : Ben&Cyril office, Saclay
+    * Attendants : K. Ammar, B. Dehaye, C. Dieudonné, J. Dubois, L. Naymeh
+    * Summary : The topic of this meeting was the project software conception and first steps for unification of what has already been done.
+
+= Report=
+
+During this meeting, we discussed the main conception of the project. We agreed that a model-view-controller design will be used for the main conception.
+Also, we noted that some critical steps are necessary to get a first common basis of the game:
+  # Use a Controller to start the GUI and the core application
+  # Create the resource tree
+  # Create physical static objects of the game (planets, ...)
+  # Create physical mobile objects of the game (ships, ...)
+  # Get a view of the game: map (general and around player)
+
+We described the resources, as seen in picture 2 (appendix). Every factory will need energy and food to work plus the input resources. Overall, the picture gives the production ratios, and if we put different factories/planets sizes, then we will apply a scaling on the production time and actual produced goods. Production could be slower on large factories, but for a larger amount of produced goods each time. 
+
+
+= Next Tasks =
+We need to:
+  * describe the actual factories, weapons, shields, hulls, ... more in detail
+  * produce actual code on each usecase
+
+= Next Meeting =
+We should hold a meeting quickly, around April 18th.
+
+= Appendix =
+  # Critical steps of the game: [https://picasaweb.google.com/lh/photo/vSNM3wE6Z2_kUdmsOGAlLw?feat=directlink]
+  # Resources in the game: [https://picasaweb.google.com/lh/photo/-uRoLkWMDsaYCACWu0gNoQ?feat=directlink]

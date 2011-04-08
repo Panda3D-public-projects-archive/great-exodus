@@ -1,5 +1,5 @@
-#summary Template to use to develop in detail each use case
-#labels Phase-Design
+#summary [UseCase] Template to use to develop in detail each use case
+#labels Phase-Design,UseCase
 
 = Introduction =
 

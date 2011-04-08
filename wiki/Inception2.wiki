@@ -1,4 +1,4 @@
-#summary Second document describing the project "Great Exodus". Use-case inside. Inception phase 2.
+#summary [Meeting] Second document describing the project "Great Exodus". Use-case inside. Inception phase 2.
 #labels Phase-Requirements
 
 = Introduction =
@@ -43,3 +43,8 @@ The next tasks we need to do is further develop each of the use cases, in a para
 
 = Next Meeting =
 Next meeting is scheduled to be on Friday 25th, February 2011, at Saclay.
+
+= Appendix =
+  # Use cases slide 1 : [https://picasaweb.google.com/lh/photo/woK9sDax-BNcMTTkubvS9Q?feat=directlink]
+  # Use cases slide 2 : [https://picasaweb.google.com/lh/photo/zvG-_9SWNjnEl010tf41wg?feat=directlink]
+  # Use cases slide 3 : [https://picasaweb.google.com/lh/photo/UF33gHXILkNHSde5-I6mlg?feat=directlink]

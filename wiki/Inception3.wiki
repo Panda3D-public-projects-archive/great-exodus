@@ -1,4 +1,4 @@
-#summary Third and last meeting for the Inception phase.
+#summary [Meeting] Third and last meeting for the Inception phase.
 #labels Phase-Requirements
 
 = Introduction =

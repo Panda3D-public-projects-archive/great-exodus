@@ -1,5 +1,5 @@
-#summary First use case for Player Interface
-#labels Phase-Design
+#summary [UseCase] First use case for Player Interface
+#labels Phase-Design,UseCase,PlayerInterface
 
 *Scope*: Game
 

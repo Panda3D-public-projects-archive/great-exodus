@@ -1,4 +1,4 @@
-#summary [ProjectManagement]This page explains how one iteration of the project works
+#summary [ProjectManagement] This page explains how one iteration of the project works
 #labels Phase-Requirements,ProjectManagement
 
 = Introduction =

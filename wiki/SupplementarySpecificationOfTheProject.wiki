@@ -1,5 +1,5 @@
-#summary This page explains the supplementary specifications of the project
-#labels Phase-Requirements,Phase-Implementation
+#summary [Specifications] This page explains the supplementary specifications of the project
+#labels Phase-Requirements,Phase-Implementation,Specifications
 
 = Programming rules =
 

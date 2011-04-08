@@ -1,4 +1,5 @@
-#summary This page centralizes every use case of the game.
+#summary [UseCase] This page centralizes every use case of the game.
+#labels UseCase
 
 = Introduction =
 

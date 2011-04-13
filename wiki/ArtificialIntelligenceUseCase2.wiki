@@ -9,7 +9,7 @@
 
 *Stakeholders and Interests:*
   * Game : runs the simulation
-  * Player : a commercial agent is attached to a planet/station/factory and wants to buy ressources for the station and sell the goods it produced.
+  * Player : a commercial agent is attached to a planet/station/factory or a ship and wants to buy and sell ressources.
   * Player Status : updates the ressources.
   * Trade Manager : manages all trade actions.
 
@@ -18,15 +18,15 @@
 *Success Guarantee (or Postconditions):* The agent can buy and sell ressources and goods.
 
 *Main Success Scenario (or Basic Flow):*
-  # Player can see his/hers/its stocks and those of the station/planet/factory.
+  # Player can see his/hers/its stocks and those of the station/planet/factory/ship.
   # Player can exchange goods and ressources.
   # Stocks are updated.
   # Player can access commercial data (quantity & cost) of any good and ressource available on each station/planet/factory.
 
 *Extensions (or Alternative Flows):*
-  `*a.` Planet/station/factory is destroyed
+  `*a.` Planet/station/factory/ship is destroyed
     # Trading process is stopped.
-    # Planet/factory/station stocks are destroyed
+    # Planet/factory/station/ship stocks are destroyed
 
 *Special Requirements:* 
   * None

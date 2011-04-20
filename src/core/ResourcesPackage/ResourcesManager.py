@@ -4,8 +4,9 @@ Created on 25 févr. 2011
 
 @author: goungy
 '''
-from ResourcesPackage.Resource import Resource
-from ResourcesPackage.ResourceNeed import ResourceNeed
+from core.ResourcesPackage.ResourceNeed import ResourceNeed
+from core.ResourcesPackage.Resource import Resource
+
 
 class ResourcesManager(object):
     '''

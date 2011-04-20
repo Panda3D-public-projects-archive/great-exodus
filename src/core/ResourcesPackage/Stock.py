@@ -5,7 +5,7 @@ Created on 25 févr. 2011
 @author: goungy
 '''
 import math
-from ResourcesPackage.StockLine import StockLine
+from core.ResourcesPackage.StockLine import StockLine
 
 class Stock(object):
     '''

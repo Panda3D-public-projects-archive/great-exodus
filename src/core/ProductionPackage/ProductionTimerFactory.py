@@ -59,19 +59,19 @@ class ProductionTimerFactory(object):
         '''
         #defining intervals
         self.time_interval_dict = {}
-        self.time_interval_dict[resource_manager.food] = 0.3
-        self.time_interval_dict[resource_manager.crystal] = 0.3
-        self.time_interval_dict[resource_manager.gaz] = 0.3        
-        self.time_interval_dict[resource_manager.chip] = 0.3
-        self.time_interval_dict[resource_manager.fuel] = 0.2
-        self.time_interval_dict[resource_manager.ice] = 0.1
-        self.time_interval_dict[resource_manager.ore] = 0.1
-        self.time_interval_dict[resource_manager.steel] = 0.8
-        self.time_interval_dict[resource_manager.radar] = 0.25
-        self.time_interval_dict[resource_manager.shield_generator] = 0.25
-        self.time_interval_dict[resource_manager.engine] = 0.25
-        self.time_interval_dict[resource_manager.hull] = 0.25
-        self.time_interval_dict[resource_manager.life_support] = 0.25
+        self.time_interval_dict[resource_manager.food] = 3
+        self.time_interval_dict[resource_manager.crystal] = 3
+        self.time_interval_dict[resource_manager.gaz] = 3        
+        self.time_interval_dict[resource_manager.chip] = 3
+        self.time_interval_dict[resource_manager.fuel] = 2
+        self.time_interval_dict[resource_manager.ice] = 1
+        self.time_interval_dict[resource_manager.ore] = 1
+        self.time_interval_dict[resource_manager.steel] = 8
+        self.time_interval_dict[resource_manager.radar] = 3
+        self.time_interval_dict[resource_manager.shield_generator] = 3
+        self.time_interval_dict[resource_manager.engine] = 3
+        self.time_interval_dict[resource_manager.hull] = 2
+        self.time_interval_dict[resource_manager.life_support] = 2
         
         #defining timers
         self.timer_map = {}

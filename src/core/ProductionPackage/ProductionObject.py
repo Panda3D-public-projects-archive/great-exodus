@@ -6,7 +6,7 @@ Created on 25 févr. 2011
 @author: goungy
 '''
 
-import time
+from core.ProductionPackage.ProductionLine import ProductionLine
 
 class ProductionObject(object):
     '''
@@ -14,7 +14,7 @@ class ProductionObject(object):
     '''
 
 
-    def __init__(self, stock, production_resource_list):
+    def __init__(self, stock, production_resource_list, production_timer_factory):
         '''
         Constructor
         '''
@@ -38,13 +38,18 @@ class ProductionObject(object):
                 needed_resource = needed_resource_line.resource
                 needed_quantity = needed_resource_line.quantity * pl.output_production
                 needed_resource_dict[needed_resource] = needed_quantity
-            self.production_lines_dict[pl] = [ pl.output_production, needed_resource_dict]
+            self.production_lines_dict[pl] = ProductionLine(needed_resource_dict, production_timer_factory.time_interval_dict[pl],pl.output_production)
+            #self.production_lines_dict[pl].iterations_to_wait = 0
             
         
     """            
     def print_stock(self):
         self.stock.print_stock()
     """
+    def update(self, iteration):
+        for res_prod in self.production_lines_dict.keys():
+            if iteration % self.production_lines_dict[res_prod].production_time_interval == 0:
+                self.evolve_stock(res_prod)
        
     def getProduced_resources(self):
         return self.production_lines_dict.keys()
@@ -55,8 +60,8 @@ class ProductionObject(object):
     def evolve_stock(self, production_resource):
         #print "EVOLVING "+production_resource.name+": " + str(self.stock.get_stock_for_resource(production_resource)) + " @ " + str(time.time()) + " s "
         #self.stock.print_stock()
-        prod_quantity = self.production_lines_dict[production_resource][0]
-        needed_resource_dict = self.production_lines_dict[production_resource][1]
+        prod_quantity = self.production_lines_dict[production_resource].quantity_to_produce
+        needed_resource_dict = self.production_lines_dict[production_resource].needed_resources_dict
         enough_to_produce = True
         for needed_resource in needed_resource_dict.keys():
             needed_quantity = needed_resource_dict[needed_resource]# * prod_quantity

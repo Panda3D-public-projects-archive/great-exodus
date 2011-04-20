@@ -4,7 +4,7 @@ Created on 25 févr. 2011
 
 @author: goungy
 '''
-from ResourcesPackage.ResourceNeed import ResourceNeed
+from core.ResourcesPackage.ResourceNeed import ResourceNeed
 
 class StockLine(ResourceNeed):
     '''

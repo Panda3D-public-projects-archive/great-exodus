@@ -5,11 +5,9 @@ Created on 25 févr. 2011
 
 @author: goungy
 '''
-from ProductionPackage.ProductionObject import ProductionObject
-from ResourcesPackage.ProductionLine import ProductionLine
 
-from ProductionPackage.ProductionTimerFactory import ProductionTimerFactory
-from ProductionPackage.ProductionObjectFactory import ProductionObjectFactory
+from core.ProductionPackage.ProductionTimerFactory import ProductionTimerFactory
+from core.ProductionPackage.ProductionObjectFactory import ProductionObjectFactory
 
         
 
@@ -25,7 +23,12 @@ class ProductionManager(object):
         Constructor
         '''
         self.productionTimerFactory = ProductionTimerFactory(resource_manager)
-        self.productionObjectFactory = ProductionObjectFactory(resource_manager)     
+        self.productionObjectFactory = ProductionObjectFactory(resource_manager)
+             
+
+    def update(self, iteration):
+        for po in self.get_all_production_objects():
+            po.update(iteration)
 
     def get_all_production_objects(self):
         return self.productionObjectFactory.get_all_production_objects()

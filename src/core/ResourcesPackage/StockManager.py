@@ -32,7 +32,7 @@ class StockManager(object):
                 stockLine_list.append(StockLine(need_res, self.small_stock, self.default_stock()))
             self.small_factory_default_stock[res] = Stock(stockLine_list)
             
-        self.small_factory_stock_map = {}
+        self.small_factory_stock_list = []
         
 
     def default_stock(self):
@@ -41,16 +41,20 @@ class StockManager(object):
         else:
             return random.randint(0, self.small_stock)
         
-    def create_small_factory_stock(self, resource):
-        stock = self.small_factory_default_stock[resource].deepcopy()
-        stock.stock_dict[resource][0] = self.default_stock()
-        self.add_small_factory_stock(resource,stock)
+    def create_small_factory_stock(self, production_rule):
+        stock_lines = set()
+        for item_to_produce in production_rule.getProduced_resources():
+            stock_lines.add(StockLine(item_to_produce, self.small_stock, self.default_stock()))
+            for production_need in production_rule.getNeeded_resources(item_to_produce):
+                res_needed = production_need.resource
+                stock_lines.add(StockLine(res_needed, self.small_stock, self.default_stock()))
+        stock = Stock(stock_lines)
+                
+        self.add_small_factory_stock(stock)
         return stock
     
-    def add_small_factory_stock(self, resource, stock):
-        if resource not in self.small_factory_stock_map.keys():
-            self.small_factory_stock_map[resource] = []
-        self.small_factory_stock_map[resource].append(stock)
+    def add_small_factory_stock(self, stock):
+        self.small_factory_stock_list.append(stock)
         
     def create_small_planet_stock(self):
         stock = self.small_planet_stock.deepcopy()
@@ -63,7 +67,7 @@ class StockManager(object):
     def get_all_stocks(self):
         stock_list = []
         stock_list.extend(self.small_planet_stock_list)
-        for l in self.small_factory_stock_map.values():
+        for l in self.small_factory_stock_list:
             stock_list.extend(l)
         return stock_list
         
@@ -76,10 +80,9 @@ class StockManager(object):
             i+=1
         print ("")
         print ("Small factories stocks: ")
-        for r in self.small_factory_stock_map.keys():
-            print( "Small",r.name,"Factories Stocks : ")
-            for f in self.small_factory_stock_map[r]:
-                f.print_stock()
-                print (" | ",end='')
+        for r in self.small_factory_stock_list:
+            print( "Small Factory Stock : ")
+            r.print_stock()
+            #print (" | ",end='')
             print ("")
             

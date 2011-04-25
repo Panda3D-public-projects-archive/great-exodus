@@ -19,7 +19,7 @@ class TestController(unittest.TestCase):
             for r in res_manager.resource_list:
                 prod_manager.create_small_factory(r, stock_manager)
                 
-    def __create_production_test_and_run(self, nb_objects, iterations=25):
+    def __create_production_test_and_run(self, nb_objects, iterations=27):
         self.__create_production(nb_objects)
         self.controller.run(iterations)
         self.__control_time()
@@ -63,12 +63,13 @@ class TestController(unittest.TestCase):
         self.__create_production_test_and_run(1000)
         pass
 
-def suite():
-    suite = unittest.TestSuite()    
-    suite.addTest(unittest.makeSuite(TestController))
-    return suite
+    @staticmethod
+    def suite():
+        suite = unittest.TestSuite()    
+        suite.addTest(unittest.makeSuite(TestController))
+        return suite
 
 if __name__ == "__main__":
-    unittest.TextTestRunner(verbosity=2,buffer=True).run(suite())
+    unittest.TextTestRunner(verbosity=1,buffer=True).run(TestController.suite())
     #import sys;sys.argv = ['', 'Test.testController']
     #unittest.main()

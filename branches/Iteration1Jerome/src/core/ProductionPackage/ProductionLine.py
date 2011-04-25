@@ -11,12 +11,12 @@ class ProductionLine(object):
     '''
 
 
-    def __init__(self, needed_resources_dict , production_time_interval, quantity_to_produce = 1 ):
+    def __init__(self, production_need_list , production_time_interval, quantity_to_produce = 1 ):
         '''
         Constructor
         '''
         self.quantity_to_produce = quantity_to_produce
-        self.needed_resources_dict = needed_resources_dict
+        self.production_need_list = production_need_list
         self.production_time_interval = production_time_interval
 
     def __str__(self):

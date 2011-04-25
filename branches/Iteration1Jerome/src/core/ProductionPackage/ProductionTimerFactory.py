@@ -52,6 +52,8 @@ class ProductionTimerFactory(object):
     classdocs
     '''
 
+    def get_production_timer(self, resource):
+        return self.time_interval_dict[resource]
 
     def __init__(self, resource_manager):
         '''

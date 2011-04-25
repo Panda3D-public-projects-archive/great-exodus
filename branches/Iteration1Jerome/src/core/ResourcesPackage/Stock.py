@@ -7,11 +7,17 @@ Created on 25 févr. 2011
 import math
 from core.ResourcesPackage.StockLine import StockLine
 
+class StockInfo(object):
+    
+    def __init__(self, quantity, max_stock):
+        self.quantity = quantity
+        self.max_stock = max_stock
+        pass
+
 class Stock(object):
     '''
     classdocs
     '''
-
 
     def __init__(self, stock_lines):
         '''
@@ -21,17 +27,15 @@ class Stock(object):
         self.stock_dict = {}
         
         for i in stock_lines:
-            self.stock_dict[i.resource] = [ i.quantity, i.max_stock ]
-            
-
-        self.already_used = None
-
-    def check_used(self, prodObj):
-        if not self.already_used:
-            self.already_used = prodObj
+            self.add_stock_line(i)
+            #self.stock_dict[i.resource] = StockInfo(i.quantity, i.max_stock)
+        
+    def add_stock_line(self, stock_line):
+        res = stock_line.resource
+        if res not in self.stock_dict.keys():
+            self.stock_dict[res] = StockInfo(stock_line.quantity,stock_line.max_stock)
         else:
-            if prodObj != self.already_used:
-                raise Exception("STOCK ALREADY IN USE!!!")
+            raise Exception("Key already in stock_dict in Stock")
         
     def print_stock(self, newline=False):
         for r in self.stock_dict.keys():
@@ -41,26 +45,26 @@ class Stock(object):
     def deepcopy(self):
         stock_lines = []
         for res in self.stock_dict.keys():
-            quantity = self.stock_dict[res][0]
-            max_stock = self.stock_dict[res][1]
+            quantity = self.get_stock_for_resource(res)
+            max_stock = self.get_max_stock_for_resource(res)
             sl = StockLine( res, max_stock, quantity )
             stock_lines.append( sl )
         copy_stock = Stock(stock_lines)
         return copy_stock
    
     def get_stock_for_resource(self, res):
-        return self.stock_dict[res][0]
+        return self.stock_dict[res].quantity
     
     def get_max_stock_for_resource(self,res,prop=1):
-        return self.stock_dict[res][1]
+        return self.stock_dict[res].max_stock
     
     def increase_resource(self, prod_resource, prod_quantity ,prop=1):
-        self.stock_dict[prod_resource][0] += int(prod_quantity * prop)
+        self.stock_dict[prod_resource].quantity += int(prod_quantity * prop)
         
-    def decrease_resource(self, resource, quantity , prodObj, prop=1):
+    def decrease_resource(self, resource, quantity , prop=1):
         #self.check_used(prodObj)
         consuming = int(math.ceil(quantity * prop))
-        self.stock_dict[resource][0] -= consuming
+        self.stock_dict[resource].quantity -= consuming
 
     
     def has_resource(self, resource):

@@ -66,8 +66,6 @@ class ProductionRule(object):
             if self.resource_in_multiple_production(actual_needed_resource):
                 self.careful_needed_resources.add(actual_needed_resource)
             #checking if resources needed to produce new item is not a product from previous production line
-            #for res in self.production_map.keys():
-            #    print("checking "+actual_needed_resource+" versus "+res)
             if actual_needed_resource in self.production_map.keys():
                 raise ProducedNeededDependencyException(actual_needed_resource)
 

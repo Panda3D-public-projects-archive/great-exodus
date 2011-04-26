@@ -7,10 +7,10 @@ import unittest
 from core.ResourcesPackage.Stock import Stock
 from core.ResourcesPackage.ResourcesManager import ResourcesManager
 from core.ResourcesPackage.StockLine import StockLine
-from core.ProductionPackage.ProductionRule import ProductionRule,\
-    ProducedNeededDependencyException
-from core.ProductionPackage.ProductionLine import ProductionLine
 from core.ProductionPackage.ProductionNeed import ProductionNeed
+from core.ProductionPackage.ProductionRule import ProductionRule, ProducedNeededDependencyException
+from core.ProductionPackage.ProductionLine import ProductionLine
+
 
 
 class TestProductionRule(unittest.TestCase):
@@ -77,7 +77,7 @@ class TestProductionRule(unittest.TestCase):
         self.assertRaises(ProducedNeededDependencyException, p.check_and_add_production_line, self.hull, self.prod_line_hull)       
         pass
     
-    def AAAtest_5_multiple_production_for_one_rule(self):
+    def test_5_multiple_production_for_one_rule(self):
         p = self.production_rule
         p.check_and_add_production_line(self.steel, self.prod_line_steel)
         self.assertRaises(ProducedNeededDependencyException, p.check_and_add_production_line, self.hull, self.prod_line_hull)       

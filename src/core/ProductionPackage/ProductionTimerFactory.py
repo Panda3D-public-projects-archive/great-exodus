@@ -52,8 +52,6 @@ class ProductionTimerFactory(object):
     classdocs
     '''
 
-    def get_production_timer(self, resource):
-        return self.time_interval_dict[resource]
 
     def __init__(self, resource_manager):
         '''
@@ -79,6 +77,9 @@ class ProductionTimerFactory(object):
         self.timer_map = {}
         for res in resource_manager.resource_list:
             self.create_timer_and_add_to_map(res)
+
+    def get_production_timer(self, resource):
+        return self.time_interval_dict[resource]
 
     def create_timer_and_add_to_map(self, resource):
         pt = ProductionTimer(self.time_interval_dict[resource], resource)

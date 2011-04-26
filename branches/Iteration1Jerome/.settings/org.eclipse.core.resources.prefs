@@ -1,7 +1,9 @@
-#Wed Apr 20 19:28:15 CEST 2011
+#Tue Apr 26 23:21:47 CEST 2011
 eclipse.preferences.version=1
+encoding//src/core/ProductionPackage/ProductionLine.py=latin1
 encoding//src/core/ProductionPackage/ProductionManager.py=latin1
 encoding//src/core/ProductionPackage/ProductionObject.py=latin1
+encoding//src/core/ResourcesPackage/Resource.py=latin1
 encoding//src/core/ResourcesPackage/ResourcesManager.py=latin1
 encoding//src/core/ResourcesPackage/Stock.py=latin1
 encoding//src/core/ResourcesPackage/StockLine.py=latin1

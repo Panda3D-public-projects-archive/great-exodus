@@ -23,15 +23,7 @@ class StockManager(object):
         #Planets stocks
         self.small_planet_stock = Stock([StockLine(resource_manager.ice, self.small_stock, self.default_stock()),StockLine(resource_manager.ore, self.small_stock, self.default_stock())])
         self.small_planet_stock_list = []
-        
-        #to build automatically factories stocks
-        self.small_factory_default_stock = {}
-        for res in resource_manager.resource_list:
-            stockLine_list = [StockLine(res, self.small_stock),]
-            for need_res in res.get_needed_resources():
-                stockLine_list.append(StockLine(need_res, self.small_stock, self.default_stock()))
-            self.small_factory_default_stock[res] = Stock(stockLine_list)
-            
+
         self.small_factory_stock_list = []
         
 

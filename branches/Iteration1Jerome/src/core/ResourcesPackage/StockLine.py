@@ -4,9 +4,8 @@ Created on 25 févr. 2011
 
 @author: goungy
 '''
-from core.ResourcesPackage.ResourceNeed import ResourceNeed
 
-class StockLine(ResourceNeed):
+class StockLine(object):
     '''
     classdocs
     '''
@@ -16,5 +15,6 @@ class StockLine(ResourceNeed):
         '''
         Constructor
         '''
-        super(StockLine,self).__init__(resource, quantity)
+        self.resource = resource
+        self.quantity = quantity
         self.max_stock = max_stock

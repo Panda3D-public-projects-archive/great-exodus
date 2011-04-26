@@ -4,7 +4,6 @@ Created on 25 févr. 2011
 
 @author: goungy
 '''
-from core.ResourcesPackage.ResourceNeed import ResourceNeed
 from core.ResourcesPackage.Resource import Resource
 
 
@@ -33,8 +32,8 @@ class ResourcesManager(object):
         self.hull = self.create_resource("hull")
         self.life_support = self.create_resource("life support")
                 
-    def create_resource(self, resource_name, prod_quantity = 1, input_resource_lines = {}):
-        res = Resource(resource_name, prod_quantity, input_resource_lines)
+    def create_resource(self, resource_name):
+        res = Resource(resource_name)
         self.add_resource_to_list(res)
         return res
     

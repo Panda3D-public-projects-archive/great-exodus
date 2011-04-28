@@ -1,0 +1,47 @@
+#summary [Meeting] Objets primordiaux à implanter dans le code
+#labels Phase-Design,Meeting
+
+= Les "Corps Céleste" C.C =
+
+Tout C.C (i.e objet physique comme une planète ou un vaisseau) doit à minima être définie par :
+ * Un nom
+ * Des coordonnées
+  * X, y voir z
+  * Une key indiquant le nom du système solaire
+  * Une key indiquant le nom de la galaxie
+ * Une taille (zone carré autour du corp céleste définissant sa « zone d’existence », tout chevauchement de deux zone d’existence est interdit)
+  * Cela implique que : chaque déplacement doit checker qu’il n’y ai pas de collisions. Tous les corps céleste d’un système solaire doivent être référencé au sein d‘une table
+ * Un SlotManager décrit après
+
+
+= Les types de C.C =
+
+Deux grand types :
+
+ * Ceux dont les coordonnées sont figés :
+  * Etoiles
+  * Planète / lunes
+  * Astéroïdes / champs d’astéroïdes
+  * Trou noir
+  * Nuage de gaz
+  * _Compléter si objet manquant…_
+
+ * Ceux qui peuvent se déplacer
+  * Les stations spatiales
+  * Les vaisseaux
+  * Des comètes
+  * _Compléter si objet manquant …_
+
+
+= Le SlotManager =
+
+Les C.C contiennent tous un SlotManager permettant la gestion :
+ * Du nombre slot (total/libre) // un C.C peut posséder 0 slot, sa sera le cas des vaisseaux
+ * La liste des objets qu’il est possible de construire sur les slots. La liste des objets constructible doit contenir des notions du type : pour construire C il faut préalablement avoir construit A & B
+ * L’objet construit sur chaque slot (vide, usine de minerais niveau 1…)
+ * Le StockManager du C.C (connexion avec Jérôme)
+
+
+= Le graph =
+
+[https://picasaweb.google.com/113593772315463479427/ProjetX#5594949486467749330]

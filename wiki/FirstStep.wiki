@@ -1,6 +1,18 @@
 #summary [Meeting] Objets primordiaux à implanter dans le code
 #labels Phase-Design,Meeting
 
+= Introduction =
+
+    * Object : First meeting to start merging each development
+    * Date : 04-12-2011, 11h45-13h
+    * Place : Ben&Cyril office, Saclay
+    * Attendants : K. Ammar, B. Dehaye, C. Dieudonné, J. Dubois, L. Naymeh, S. Salmons (partially)
+    * Summary : The topic of this meeting was to establish the first necessary steps for the software integration of each development altogether.
+
+= Report=
+
+To expand further.
+
 = Les "Corps Céleste" C.C =
 
 Tout C.C (i.e objet physique comme une planète ou un vaisseau) doit à minima être définie par :

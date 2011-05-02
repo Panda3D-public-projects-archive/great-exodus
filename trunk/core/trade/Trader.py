@@ -3,9 +3,9 @@ Created on 2 mai 2011
 
 @author: benjamin
 '''
-from core.resourcesPackage.Stock import *
-from core.trade.Accounts import *
-from core.trade.StockExchange import *
+from trunk.core.ResourcesPackage.Stock import *
+from trunk.core.trade.Accounts import *
+from trunk.core.trade.StockExchange import *
 
 class Trader(object):
     '''

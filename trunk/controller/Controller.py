@@ -7,7 +7,9 @@ import time
 from core.ResourcesPackage.ResourcesManager import ResourcesManager
 from core.ResourcesPackage.StockManager import StockManager
 from core.ProductionPackage.ProductionManager import ProductionManager
+from trunk.core.trade.TraderManager import TraderManager
 from controller.ControllerTimer import ControllerTimer
+
 
 
 
@@ -25,6 +27,7 @@ class Controller(object):
         self.resource_manager = ResourcesManager()
         self.stock_manager = StockManager(self.resource_manager,1) 
         self.production_manager = ProductionManager(self.resource_manager)
+        self.trader_manager = TraderManager()
         self.controller_timer = ControllerTimer()
         self.nb_iterations = 0
         

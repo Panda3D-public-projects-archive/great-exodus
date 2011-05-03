@@ -30,7 +30,7 @@ class TraderManager(object):
     def add_trader(self, trader):
         self.trader_list.append(trader)
         
-    def create_trader(self, accounts, stocks, resources_to_buy, resources_to_sell):
-        trader = Trader(accounts, stocks, resources_to_buy, resources_to_sell)
+    def create_trader(self, accounts, storage_room, resources_to_buy = False, resources_to_sell = False, is_docked):
+        trader = Trader(accounts, storage_room, resources_to_buy, resources_to_sell, is_docked)
         self.add_trader(trader)
         return trader

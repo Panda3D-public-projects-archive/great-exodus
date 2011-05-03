@@ -3,8 +3,9 @@ Created on 3 mai 2011
 
 @author: benjamin
 '''
-from trunk.core.ResourcesPackage.StockManager import *
+from trunk.core.ResourcesPackage.StockManager import * 
 from trunk.core.ResourcesPackage.Stock import *
+from trunk.core.ResourcesPackage.StockLine import *
 
 class StorageRoom(object):
     '''
@@ -17,6 +18,7 @@ class StorageRoom(object):
         Constructor
         '''
         self.stocks = stocks
+        self.is_docked = is_docked
         
     def get_stocks(self):
         return self.stocks
@@ -31,5 +33,48 @@ class StorageRoom(object):
         self.is_docked = is_docked
         
     def __str__(self):
-        return "Storage room: " + self.stocks + " Docked: " + self.is_docked
+        if self.stocks != None:
+            stocks_to_print = self.stocks
+        else:
+            stocks_to_print = "nothing"
+        if self.is_docked :
+            status_to_print = "yes"
+        else:
+            status_to_print = "no"
+        return "Storage room: " + stocks_to_print + " ~~~ Docked: " + status_to_print
+    
+class StorageRoomTest(object):
+    
+    def main():
+        storage_room = StorageRoom()
+        print(str(storage_room))
+        print("Let's display the stocks of the storage room :")
+        print(str(storage_room.get_stocks()))
+        print("Let's check that the storage room is not docked:")
+        if storage_room.is_docked():
+            to_print = "Ship docked."
+        else:
+            to_print = "Ship not docked."
+        print(to_print)
+        storage_room = None
+        storage_room = StorageRoom(['Dildo', 69, 69], True)
+        print(str(storage_room))
+        if storage_room.is_docked():
+            to_print = "Ship docked."
+        else:
+            to_print = "Ship not docked."
+        print(to_print)
+        print(str(storage_room.get_stocks()))
+        storage_room.set_is_docked(False)
+        storage_room.set_stocks(['Anal plug', 1, 1])
+        print(str(storage_room))
+        if storage_room.is_docked():
+            to_print = "Ship docked."
+        else:
+            to_print = "Ship not docked."
+        print(to_print)
+        
+    if __name__ == "__main__":
+        main()
+        pass
         

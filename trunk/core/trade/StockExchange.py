@@ -17,4 +17,7 @@ class StockExchange(object):
         
     def get_price(self, ressources):
         return 42
+    
+    def __str__(self):
+        return "Stock Exchange"
         

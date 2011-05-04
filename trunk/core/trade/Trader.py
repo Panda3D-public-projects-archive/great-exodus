@@ -3,10 +3,10 @@ Created on 2 mai 2011
 
 @author: benjamin
 '''
-from trunk.core.ResourcesPackage.Stock import *
-from trunk.core.trade.Accounts import *
-from trunk.core.trade.StockExchange import *
-from trunk.core.trade.StorageRoom import * #will be in "space"
+from core.ResourcesPackage.Stock import *
+from core.trade.Accounts import *
+from core.trade.StockExchange import *
+from core.trade.StorageRoom import * #will be in "space"
 
 class Trader(object):
     '''
@@ -18,7 +18,7 @@ class Trader(object):
     to a planet or an entity that can buy/sell resources. /!\
     '''
 
-    def __init__(self, accounts, storage_room, resources_to_buy = None, resources_to_sell = None, is_docked = False):
+    def __init__(self, accounts, storage_room, resources_to_buy = None, resources_to_sell = None, entity_to_trade_with = None):
         '''
         Constructor
         '''
@@ -27,6 +27,7 @@ class Trader(object):
         self.resources_to_buy = resources_to_buy #to be defined by the player or the AI
         self.resources_to_sell = resources_to_sell #to be defined by the player or the AI
         self.is_docked = self.storage_room().is_docked() #temporary boolean to test wether the trader is at a station or not / to be removed
+        self.entity_to_trade_with = entity_to_trade_with
         
     def __str__(self):
         return self.accounts + " " + self.storage_room + " " + self.resources_to_buy + " " + self.resources_to_sell + " " + self.is_docked
@@ -46,6 +47,9 @@ class Trader(object):
     def get_is_docked(self):
         return self.is_docked
     
+    def get_entity_to_trade_with(self):
+        return self.entity_to_trade_with
+    
     def set_accounts(self, accounts):
         self.accounts = accounts
         
@@ -61,17 +65,24 @@ class Trader(object):
     def set_is_docked(self, is_docked):
         self.is_docked = is_docked
         
+    def set_entity_to_trade_with(self, entity_to_trade_with):
+        self.entity_to_trade_with = entity_to_trade_with
+        
     def buy(self, resource, quantity):
-        if self.is_docked and resource.price()*quantity <= self.accounts.get_credits() and quantity + self.stocks.get_stock_for_resource(resource) <= self.stocks.get_max_stock_for_resource(resource):
+        if self.is_docked and resource.price()*quantity <= self.accounts.get_credits() and quantity + self.stocks.get_stock_for_resource(resource) <= self.stocks.get_max_stock_for_resource(resource) and quantity <= self.entity_to_trade_with.get_stocks().get_stock_for_resource(resource):
             self.accounts.decrease(resource.price()*quantity)
+            self.entity_to_trade_with.get_accounts().increase(resource.price()*quantity)
             self.storage_room.get_stocks().increase_resource(resource, quantity)
+            self.entity_to_trade_with.get_stocks().decrease_resource(resource, quantity)
         else:
             raise Exception("Can not buy this resource.")
         
     def sell(self, resource, quantity):
-        if self.is_docked and quantity < self.stocks.get_stock_for_resource(resource):
+        if self.is_docked and quantity < self.stocks.get_stock_for_resource(resource) and resource.price()*quantity <= self.entity.get_accounts().get_credits() and quantity + self.entity_to_trade_with.get_stocks().get_stock_for_resource(resource) <= self.entity_to_trade_with.get_stocks().get_max_stock_for_resource(resource) :
             self.accounts.increase(resource.price()*quantity)
+            self.entity_to_trade_with.get_accounts().decrease(resource.price()*quantity)
             self.storage_room.get_stocks().decrease_resource(resource, quantity)
+            self.entiry_to_trade_with.get_stocks().increade_resource(resource, quantity)
         else:
             raise Exception("Can not sell this resource.")
         

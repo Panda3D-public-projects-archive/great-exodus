@@ -4,7 +4,7 @@ Created on 25 févr. 2011
 
 @author: goungy
 '''
-from trunk.core.ResourcesPackage.Resource import Resource
+from core.ResourcesPackage.Resource import Resource
 
 
 class ResourcesManager(object):

@@ -4,8 +4,8 @@ Created on 25 févr. 2011
 
 @author: goungy
 '''
-from trunk.core.ResourcesPackage.Stock import Stock
-from trunk.core.ResourcesPackage.StockLine import StockLine
+from core.ResourcesPackage.Stock import Stock
+from core.ResourcesPackage.StockLine import StockLine
 import random
 
 class StockManager(object):

@@ -6,6 +6,7 @@ Created on 3 mai 2011
 from core.ResourcesPackage.StockManager import * 
 from core.ResourcesPackage.Stock import *
 from core.ResourcesPackage.StockLine import *
+from core.ResourcesPackage.Resource import *
 
 class StorageRoom(object):
     '''
@@ -13,15 +14,12 @@ class StorageRoom(object):
     '''
 
 
-    def __init__(self, stocks = None, is_docked = None):
+    def __init__(self, stocks = None, is_docked = False):
         '''
         Constructor
         '''
         self.stocks = stocks
-        if is_docked == None:
-            self.is_docked = False
-        else:
-            self.is_docked = is_docked
+        self.is_docked = is_docked
         
     def get_stocks(self):
         return self.stocks
@@ -44,7 +42,7 @@ class StorageRoom(object):
             status_to_print = "yes"
         else:
             status_to_print = "no"
-        return "Storage room: " + stocks_to_print + " ~~~ Docked: " + status_to_print
+        return "Storage room: " + str(stocks_to_print) + " ~~~ Docked: " + status_to_print
     
 class StorageRoomTest(object):
     
@@ -54,24 +52,24 @@ class StorageRoomTest(object):
         print("Let's display the stocks of the storage room :")
         print(str(storage_room.get_stocks()))
         print("Let's check that the storage room is not docked:")
-        if storage_room.is_docked():
+        if storage_room.get_is_docked():
             to_print = "Ship docked."
         else:
             to_print = "Ship not docked."
         print(to_print)
         storage_room = None
-        storage_room = StorageRoom(['Dildo', 69, 69], True)
+        storage_room = StorageRoom(Stock({StockLine(Resource("Dildo"), 69, 69)}), True)
         print(str(storage_room))
-        if storage_room.is_docked():
+        if storage_room.get_is_docked():
             to_print = "Ship docked."
         else:
             to_print = "Ship not docked."
         print(to_print)
         print(str(storage_room.get_stocks()))
         storage_room.set_is_docked(False)
-        storage_room.set_stocks(['Anal plug', 1, 1])
+        storage_room.set_stocks(Stock({StockLine(Resource("Anal plug"), 1, 1)}))
         print(str(storage_room))
-        if storage_room.is_docked():
+        if storage_room.get_is_docked():
             to_print = "Ship docked."
         else:
             to_print = "Ship not docked."

@@ -3,9 +3,9 @@ Created on 3 mai 2011
 
 @author: benjamin
 '''
-from trunk.core.ResourcesPackage.StockManager import * 
-from trunk.core.ResourcesPackage.Stock import *
-from trunk.core.ResourcesPackage.StockLine import *
+from core.ResourcesPackage.StockManager import * 
+from core.ResourcesPackage.Stock import *
+from core.ResourcesPackage.StockLine import *
 
 class StorageRoom(object):
     '''
@@ -13,12 +13,15 @@ class StorageRoom(object):
     '''
 
 
-    def __init__(self, stocks = None, is_docked = False):
+    def __init__(self, stocks = None, is_docked = None):
         '''
         Constructor
         '''
         self.stocks = stocks
-        self.is_docked = is_docked
+        if is_docked == None:
+            self.is_docked = False
+        else:
+            self.is_docked = is_docked
         
     def get_stocks(self):
         return self.stocks

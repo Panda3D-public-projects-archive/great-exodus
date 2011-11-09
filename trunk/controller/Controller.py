@@ -21,7 +21,7 @@ class Controller(object):
         self.game_engine = GameEngine()
         self.gui = Gui()
         self.max_iterations = 10
-        self.main_clock = float(1)/ 5
+        self.main_clock = float(1)/ 30
         self.main_loop_iterations = 0
         
     def start_main_loop(self):

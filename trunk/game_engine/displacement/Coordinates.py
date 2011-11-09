@@ -12,7 +12,10 @@ class Coordinates:
         self.z = z
 
     def __print__(self):
-        return 'X=', self.x, 'Y=', self.y, 'Z=', self.z
+        return 'X='+ str(self.x)+ 'Y='+ str(self.y)+ 'Z=', str(self.z)
+    
+    def __str__(self):
+        return "X="+ str(self.x)+ " Y="+ str(self.y)+ " Z="+ str(self.z)    
 
     def get_x(self):
         return self.x

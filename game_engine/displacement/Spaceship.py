@@ -3,8 +3,8 @@ Created on 8 nov. 2011
 
 @author: benjamin
 '''
+from game_engine.displacement.Coordinates import Coordinates
 
-from trunk.displacement.Coordinates import Coordinates
 
 """
 We need to take into account the fact that every spaceship has a speed. It therefore can not go instantly at a given coordinates.
@@ -18,7 +18,10 @@ class Spaceship:
         self.coordinates = coordinates
 
     def __print__(self):
-        return 'Name :', self.name, 'Coordinates :', self.coordinates
+        return 'Name :'+ self.name+ 'Coordinates :'+ self.coordinates
+    
+    def __str__(self):
+        return "Name : "+ self.name + " Coordinates : " + str(self.coordinates)
 
     def get_name(self):
         return self.name

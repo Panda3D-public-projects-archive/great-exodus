@@ -21,7 +21,7 @@ class MovementManager(object):
         deltay = randint(-1,1)
         deltaz = 0
         ship_coord = ship.get_coordinates()
-        newx = deltax + ship_coord.get_x()
-        newy = deltay + ship_coord.get_y()
-        newz = deltaz + ship_coord.get_z()
+        newx = deltax * ship.speed + ship_coord.get_x()
+        newy = deltay * ship.speed+ ship_coord.get_y()
+        newz = deltaz * ship.speed+ ship_coord.get_z()
         ship.go_to_x_y_z(newx, newy, newz)

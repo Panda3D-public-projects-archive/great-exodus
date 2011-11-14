@@ -16,15 +16,14 @@ class StarSystemSectorFactory(object):
         '''
         Constructor
         '''
-        self.star_systems_sectors_dict = {}
+        self.star_systems_sectors_list = []
         
-    def create_star_system_sector(self, star_system, name = None):
+    def create_star_system_sector(self, star_system, name = None):   
         if not name:
-            name = "Star System Sector " + str(len(self.star_systems_sectors_dict))
+            name = "Star System Sector " + str(len(self.star_systems_sectors_list))
         star_system_sector = StarSystemSector(star_system, name)
-        if not self.star_systems_sectors_dict.has_key(star_system):
-            self.star_systems_sectors_dict[star_system] = []
-        self.star_systems_sectors_dict[star_system].append(star_system_sector)
+        self.star_systems_sectors_list.append(star_system_sector)
+        star_system.add_star_system_sector(star_system_sector)
         
 StarSystemSectorFactory = StarSystemSectorFactory()
         

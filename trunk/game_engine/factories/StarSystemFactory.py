@@ -16,15 +16,14 @@ class StarSystemFactory(object):
         '''
         Constructor
         '''
-        self.star_systems_dict = {}
+        self.star_systems_list = []
         
     def create_star_system(self, galaxy, name = None):
         if not name:
-            name = "Star System " + str(len(self.star_systems_dict))
-        star_system = StarSystem(name)
-        if not self.star_systems_dict.has_key(galaxy):
-            self.star_systems_dict[galaxy] = []
-        self.star_systems_dict[galaxy].append(star_system)
+            name = "Star System " + str(len( self.star_systems_list))
+        star_system = StarSystem(galaxy, name)            
+        self.star_systems_list.append(star_system)
+        galaxy.add_star_system(star_system)
         
 StarSystemFactory = StarSystemFactory()
         

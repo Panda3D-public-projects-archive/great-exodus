@@ -13,6 +13,7 @@ from game_engine.factories.GalaxyFactory import GalaxyFactory
 from game_engine.factories.StarSystemSectorFactory import StarSystemSectorFactory
 from game_engine.GameStatus import GameStatus
 from game_engine.factories.ShipFactory import ShipFactory
+from game_engine.serialization.UniverseSerialization import UniverseSerialization
 
 class Controller(object):
     '''
@@ -30,11 +31,16 @@ class Controller(object):
         self.max_iterations = 100
         self.subiterations = 30
         GameStatus.subiterations = self.subiterations        
-        self.main_clock = float(1)/ self.subiterations
+        self.main_clock = float(1)/ self.subiterations       
+            
+    def create_initial_movement_lists(self):
+        self.game_engine.create_initial_movement_lists() 
         
     def start_main_loop(self):
         start_ = clock()
+        print "Starting main loop"
         while True:
+            #print "Iterating ..."
             st = clock()
             self.game_engine.update()
             self.gui.update()
@@ -54,13 +60,19 @@ class Controller(object):
         print("Execution time = ",end_-start_," and expected : ",self.max_iterations*self.main_clock)
         
     def create_universe(self, nb_galaxies, nb_star_systems_per_galaxy, nb_star_system_sectors_per_star_system, nb_ships_per_sector):
+        UniverseSerialization.load_universe("game_engine/game_objects/database/RealisticUniverse.xml")
+        '''
         self.game_engine.create_galaxies(nb_galaxies)
         for galaxy in GalaxyFactory.galaxies_list:
+            #print "For each gal"
             self.game_engine.create_star_systems(galaxy, nb_star_systems_per_galaxy)
             for star_system in galaxy.star_systems_list:
+                #print "for each star"
                 self.game_engine.create_star_system_sectors(star_system, nb_star_system_sectors_per_star_system)
                 for star_system_sector in star_system.star_system_sectors_list:
+                    #print "For each sector"
                     self.game_engine.create_ships_in_star_system_sector(star_system_sector, nb_ships_per_sector)
+        '''
                     
     def display_universe(self):
         print("There are",len(GalaxyFactory.galaxies_list),"galaxies")

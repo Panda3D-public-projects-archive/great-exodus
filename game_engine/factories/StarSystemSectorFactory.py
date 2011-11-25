@@ -24,6 +24,7 @@ class StarSystemSectorFactory(object):
         star_system_sector = StarSystemSector(star_system, name)
         self.star_systems_sectors_list.append(star_system_sector)
         star_system.add_star_system_sector(star_system_sector)
+        return star_system_sector
         
 StarSystemSectorFactory = StarSystemSectorFactory()
         

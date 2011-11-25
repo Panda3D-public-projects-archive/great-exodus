@@ -13,8 +13,10 @@ In order to simplify the model, we will "jump" to the coordinates expected.
 
 class Spaceship(MovableSpaceObject):
 
-    def __init__(self, name, coordinates, star_system_sector, speed):
-        super(Spaceship, self).__init__(name, coordinates, star_system_sector, speed)
+    def __init__(self, name, coordinates, star_system_sector, ship_properties):
+        self.ship_properties = ship_properties
+        super(Spaceship, self).__init__(name, coordinates, star_system_sector, ship_properties.current_speed_ratio * ship_properties.max_speed)
+        
         
         
 

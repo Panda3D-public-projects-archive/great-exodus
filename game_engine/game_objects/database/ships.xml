@@ -1,0 +1,7 @@
+<ships_database>
+	<Cargo speed="0.25" hull="1.5"/>
+	<Scout speed="2.0" hull="0.25"/>
+	<Destroyer speed="0.5" hull="2.0"/>
+	<Bomber speed="0.75" hull="0.75"/>
+	<Fighter speed="1.0" hull="1.0"/>
+</ships_database>

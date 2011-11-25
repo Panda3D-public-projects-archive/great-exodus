@@ -23,5 +23,6 @@ class GalaxyFactory(object):
             name = "Galaxy " + str(len(self.galaxies_list))
         galaxy = Galaxy(name)
         self.galaxies_list.append(galaxy)
+        return galaxy
         
 GalaxyFactory = GalaxyFactory()

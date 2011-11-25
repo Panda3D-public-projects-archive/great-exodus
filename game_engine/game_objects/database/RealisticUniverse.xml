@@ -1,0 +1,95 @@
+<Universe>
+	<Galaxy name="MilkyWay">
+		<StarSystem name="SolarSystem">
+			<StarSystemSector name="Earth">
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Scout" name="Apollo" current_hull="0.8" current_speed="0.1">
+					<Coordinates X="4" Y="2" Z="0"/>
+				</Ship>
+			</StarSystemSector>
+			<StarSystemSector name="Mars">
+				<Ship type="Scout" name="007" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Scout" name="Land Yard" current_hull="0.8" current_speed="0.1">
+					<Coordinates X="4" Y="2" Z="0"/>
+				</Ship>			
+			</StarSystemSector>
+			<StarSystemSector name="Mercury">
+				<Ship type="Cargo" name="Helios" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Portos" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Aramios" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+			</StarSystemSector>
+			<StarSystemSector name="Venus">
+				<Ship type="Scout" name="Les femmes" current_hull="0.8" current_speed="0.1">
+					<Coordinates X="4" Y="2" Z="0"/>
+				</Ship>
+				<Ship type="Scout" name="viennent de" current_hull="0.8" current_speed="0.1">
+					<Coordinates X="4" Y="2" Z="0"/>
+				</Ship>
+			</StarSystemSector>
+			<StarSystemSector name="Jupiter">
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>				
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>
+				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+					<Coordinates X="0" Y="1" Z="0"/>
+				</Ship>																																																			
+			</StarSystemSector>
+			<StarSystemSector name="Saturn">
+			</StarSystemSector>
+			<StarSystemSector name="Pluto">
+			</StarSystemSector>
+			<StarSystemSector name="Uranus">
+			</StarSystemSector>
+		</StarSystem>
+		<StarSystem name="OterStarSystem"/>
+	</Galaxy>
+	<Galaxy name="Andromed">
+		<StarSystem name="SS1"/>
+	</Galaxy>
+</Universe>

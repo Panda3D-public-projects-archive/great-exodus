@@ -24,6 +24,7 @@ class StarSystemFactory(object):
         star_system = StarSystem(galaxy, name)            
         self.star_systems_list.append(star_system)
         galaxy.add_star_system(star_system)
+        return star_system
         
 StarSystemFactory = StarSystemFactory()
         

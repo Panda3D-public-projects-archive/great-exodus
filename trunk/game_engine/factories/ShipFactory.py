@@ -5,13 +5,18 @@ Created on 9 nov. 2011
 '''
 
 from game_engine.displacement.Coordinates import Coordinates
-from game_engine.game_objects.spaceships.SlowSpaceship import SlowSpaceship
-from game_engine.game_objects.spaceships.FastSpaceship import FastSpaceship
+from game_engine.game_objects.database.ShipsDatabase import ShipsDatabase
+from game_engine.game_objects.spaceships.Spaceship import Spaceship
+
 
 class ShipFactory(object):
     '''
     classdocs
     '''
+    
+    CARGO = "Cargo"
+    SCOUT = "Scout"
+    
     def __call__(self):
         return self
     
@@ -19,23 +24,24 @@ class ShipFactory(object):
         '''
         Constructor
         '''
-        self.ship_list = []
+        self.ship_list = []           
         
-    def create_slow_ship_in_star_system(self, star_system_sector, name = None, coordinates = Coordinates(0, 0, 0)):
-        if not name:
-            name = "Slow Spaceship "+str(self.number_of_ships())            
-        ship = SlowSpaceship(name, coordinates, star_system_sector)
-        #print(ship)
+    def create_ship(self, name, coordinates, star_system_sector, ship_properties):
+        ship = Spaceship(name, coordinates, star_system_sector, ship_properties)
         self.ship_list.append(ship)
-        star_system_sector.add_spaceship(ship)
+        star_system_sector.add_spaceship(ship)        
+      
+    def create_cargo_in_star_system(self, star_system_sector, name = None, coordinates = Coordinates(0, 0, 0)):
+        if not name:
+            name = "Cargo "+str(self.number_of_ships())
+        ship_properties = ShipsDatabase.get_ship_info_from_type(self.CARGO)
+        return self.create_ship(name, coordinates, star_system_sector, ship_properties)
         
-    def create_fast_ship_in_star_system(self, star_system_sector, name = None, coordinates = Coordinates(0, 0, 0)):
+    def create_scout_in_star_system(self, star_system_sector, name = None, coordinates = Coordinates(0, 0, 0)):
         if not name:
-            name = "Fast Spaceship "+str(self.number_of_ships())            
-        ship = FastSpaceship(name, coordinates, star_system_sector)
-        #print(ship)
-        self.ship_list.append(ship)
-        star_system_sector.add_spaceship(ship)
+            name = "Scout "+str(self.number_of_ships())
+        ship_properties = ShipsDatabase.get_ship_info_from_type(self.SCOUT)
+        return self.create_ship(name, coordinates, star_system_sector, ship_properties)
         
     def get_ship_list(self):
         return self.ship_list

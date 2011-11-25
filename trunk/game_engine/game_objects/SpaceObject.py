@@ -30,3 +30,6 @@ class SpaceObject(GameObject):
 
     def set_coordinates(self, coordinates):
         self.coordinates = coordinates
+        
+    def get_star_system_sector(self):
+        return self.star_system_sector

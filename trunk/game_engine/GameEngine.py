@@ -23,13 +23,26 @@ class GameEngine(object):
         Constructor
         '''
         self.movement_manager = MovementManager()
+        self.accurate_movment_ships = []
+        self.approximate_movement_ships = []
+        
+    def create_initial_movement_lists(self):
+        
+        for ship in ShipFactory.get_ship_list():
+            ship_sector = ship.get_star_system_sector()
+            if PlayerStatus.player_is_in_star_system_sector(ship_sector):
+                self.accurate_movment_ships.append(ship)
+            else:
+                self.approximate_movement_ships.append(ship)        
         
     def update(self):
+        print "GameEngine update"
         ship_list = ShipFactory.get_ship_list()
-        '''
         i = 0
+        '''
         for galaxy in GalaxyFactory.galaxies_list:
             galaxy.move_ships()
+        
         '''
         '''
         i = 0
@@ -44,14 +57,14 @@ class GameEngine(object):
             i += 1
         pass
         '''
-        nb_ships = 20
-        MovementManager.move_ships_random_accurately(ship_list[0:nb_ships])
+        
+        MovementManager.move_ships_random_accurately(self.accurate_movment_ships)
         i = GameStatus.subiteration
-        remaining_ship_list = ship_list[nb_ships:]
-        for i in range(GameStatus.subiteration,len(remaining_ship_list), GameStatus.subiterations):
+        for i in range(GameStatus.subiteration,len(self.approximate_movement_ships), GameStatus.subiterations):
             #print("My turn to fly")
-            MovementManager.move_ship_random_approximately(remaining_ship_list[i])
+            MovementManager.move_ship_random_approximately(self.approximate_movement_ships[i])
         pass
+        
 
     def create_ships_in_star_system_sector(self, star_system_sector, nb_ships = 0):
         '''
@@ -59,8 +72,8 @@ class GameEngine(object):
         Will not be part of final project.
         '''        
         for i in range(nb_ships):
-            ShipFactory.create_slow_ship_in_star_system(star_system_sector)
-            ShipFactory.create_fast_ship_in_star_system(star_system_sector)
+            ShipFactory.create_cargo_in_star_system(star_system_sector)
+            ShipFactory.create_scout_in_star_system(star_system_sector)
             
     def create_galaxies(self, nb_galaxies = 1):
         for i in range(nb_galaxies):

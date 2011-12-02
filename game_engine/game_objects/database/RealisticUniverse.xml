@@ -2,7 +2,7 @@
 	<Galaxy name="MilkyWay">
 		<StarSystem name="SolarSystem">
 			<StarSystemSector name="Earth">
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="TitanAE" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
 				<Ship type="Scout" name="Apollo" current_hull="0.8" current_speed="0.1">
@@ -37,46 +37,46 @@
 				</Ship>
 			</StarSystemSector>
 			<StarSystemSector name="Jupiter">
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan01" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan02" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan03" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan04" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan05" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan06" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan07" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan08" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan09" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>				
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan10" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan11" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan12" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan13" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>
-				<Ship type="Cargo" name="Titan" current_hull="1" current_speed="1">
+				<Ship type="Cargo" name="Titan14" current_hull="1" current_speed="1">
 					<Coordinates X="0" Y="1" Z="0"/>
 				</Ship>																																																			
 			</StarSystemSector>

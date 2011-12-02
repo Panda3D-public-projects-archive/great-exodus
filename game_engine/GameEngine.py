@@ -23,17 +23,7 @@ class GameEngine(object):
         Constructor
         '''
         self.movement_manager = MovementManager()
-        self.accurate_movment_ships = []
-        self.approximate_movement_ships = []
-        
-    def create_initial_movement_lists(self):
-        
-        for ship in ShipFactory.get_ship_list():
-            ship_sector = ship.get_star_system_sector()
-            if PlayerStatus.player_is_in_star_system_sector(ship_sector):
-                self.accurate_movment_ships.append(ship)
-            else:
-                self.approximate_movement_ships.append(ship)        
+      
         
     def update(self):
         print "GameEngine update"
@@ -58,22 +48,12 @@ class GameEngine(object):
         pass
         '''
         
-        MovementManager.move_ships_random_accurately(self.accurate_movment_ships)
+        MovementManager.move_ships_in_sector_random_accurately()
         i = GameStatus.subiteration
-        for i in range(GameStatus.subiteration,len(self.approximate_movement_ships), GameStatus.subiterations):
+        for i in range(GameStatus.subiteration,len(MovementManager.approximate_movement_ships), GameStatus.subiterations):
             #print("My turn to fly")
-            MovementManager.move_ship_random_approximately(self.approximate_movement_ships[i])
+            MovementManager.move_ship_random_approximately(MovementManager.approximate_movement_ships[i])
         pass
-        
-
-    def create_ships_in_star_system_sector(self, star_system_sector, nb_ships = 0):
-        '''
-        Help function to create ships for testing.
-        Will not be part of final project.
-        '''        
-        for i in range(nb_ships):
-            ShipFactory.create_cargo_in_star_system(star_system_sector)
-            ShipFactory.create_scout_in_star_system(star_system_sector)
             
     def create_galaxies(self, nb_galaxies = 1):
         for i in range(nb_galaxies):
@@ -86,3 +66,7 @@ class GameEngine(object):
     def create_star_system_sectors(self, star_system, nb_star_system_sectors = 1):
         for i in range(nb_star_system_sectors):
             StarSystemSectorFactory.create_star_system_sector(star_system)
+            
+    def change_player_sector(self, new_sector):
+        PlayerStatus.set_position_in_universe(new_sector)
+        MovementManager.update_movement_lists(new_sector)

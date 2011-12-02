@@ -18,9 +18,16 @@ class MovableSpaceObject(SpaceObject):
         '''
         super(MovableSpaceObject, self).__init__(name, coordinates, star_system_sector)
         self.speed = speed
+        self.move_observers = []
+        
+    def add_move_observer(self, observer):
+        self.move_observers.append(observer)
         
     def go_to_coord(self, coordinates):
         self.go_to_x_y_z(coordinates.get_x(), coordinates.get_y(), coordinates.get_z())
     
     def go_to_x_y_z(self, x, y, z):
-        self.set_coordinates(Coordinates(x, y, z))   
+        coord = Coordinates(x, y, z)
+        self.set_coordinates(coord)
+        for obs in self.move_observers:
+            obs.update_coordinates(coord)

@@ -14,6 +14,7 @@ from game_engine.factories.StarSystemSectorFactory import StarSystemSectorFactor
 from game_engine.GameStatus import GameStatus
 from game_engine.factories.ShipFactory import ShipFactory
 from game_engine.serialization.UniverseSerialization import UniverseSerialization
+from game_engine.displacement.MovementManager import MovementManager
 
 class Controller(object):
     '''
@@ -34,7 +35,7 @@ class Controller(object):
         self.main_clock = float(1)/ self.subiterations       
             
     def create_initial_movement_lists(self):
-        self.game_engine.create_initial_movement_lists() 
+        MovementManager.create_initial_movement_lists() 
         
     def start_main_loop(self):
         start_ = clock()
@@ -50,6 +51,8 @@ class Controller(object):
             else:
                 sleep_time = 0
             sleep(sleep_time)
+            if GameStatus.iteration == 10:
+                MovementManager.update_movement_lists((StarSystemSectorFactory.star_systems_sectors_list[4]))
             print("Iteration : ",GameStatus.iteration," main_clock = ",self.main_clock," iteration time = ",iteration_time," and sleep time : ",sleep_time)            
             GameStatus.move_to_next_iteration(self.subiterations)
             if GameStatus.iteration == self.max_iterations:

@@ -19,10 +19,11 @@ class PlayerStatus(object):
         self.current_star_system = None
         self.current_star_system_sector = None
         
-    def set_position_in_universe(self, current_star_system_sector):
+    def set_position_in_universe(self, current_star_system_sector):          
         self.current_star_system_sector = current_star_system_sector
         self.current_star_system = self.current_star_system_sector.star_system
         self.current_galaxy = self.current_star_system.galaxy
+        
 
     def player_is_in_galaxy(self, galaxy):
         return galaxy == self.current_galaxy

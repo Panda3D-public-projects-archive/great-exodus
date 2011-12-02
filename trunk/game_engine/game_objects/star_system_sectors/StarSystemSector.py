@@ -39,4 +39,6 @@ class StarSystemSector(GameObject):
             MovementManager.move_ships_random_approximately(self.spaceships_list)
             
     def move_ships_random_accurately(self):
-            MovementManager.move_ships_random_accurately(self.spaceships_list)            
+            MovementManager.move_ships_random_accurately(self.spaceships_list)  
+            
+              

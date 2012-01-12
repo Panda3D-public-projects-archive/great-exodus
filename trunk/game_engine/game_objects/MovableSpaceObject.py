@@ -23,6 +23,9 @@ class MovableSpaceObject(SpaceObject):
     def add_move_observer(self, observer):
         self.move_observers.append(observer)
         
+    def remove_move_observer(self, observer):
+        self.move_observers.remove(observer)
+        
     def go_to_coord(self, coordinates):
         self.go_to_x_y_z(coordinates.get_x(), coordinates.get_y(), coordinates.get_z())
     

@@ -15,6 +15,7 @@ from game_engine.GameStatus import GameStatus
 from game_engine.factories.ShipFactory import ShipFactory
 from game_engine.serialization.UniverseSerialization import UniverseSerialization
 from game_engine.displacement.MovementManager import MovementManager
+from gui.PlayerMoveObserver import PlayerMoveObserver
 
 class Controller(object):
     '''
@@ -27,15 +28,14 @@ class Controller(object):
         Constructor
         '''
         self.game_engine = GameEngine()
-        self.gui = Gui()
+        
         self.player_status = PlayerStatus()
+        self.gui = Gui()
+        self.move_player_observer = PlayerMoveObserver(self.gui.player_scene, self.player_status)
         self.max_iterations = 100
         self.subiterations = 30
         GameStatus.subiterations = self.subiterations        
         self.main_clock = float(1)/ self.subiterations       
-            
-    def create_initial_movement_lists(self):
-        MovementManager.create_initial_movement_lists() 
         
     def start_main_loop(self):
         start_ = clock()
@@ -52,7 +52,13 @@ class Controller(object):
                 sleep_time = 0
             sleep(sleep_time)
             if GameStatus.iteration == 10:
-                MovementManager.update_movement_lists((StarSystemSectorFactory.star_systems_sectors_list[4]))
+                self.player_status.set_position_in_universe(StarSystemSectorFactory.star_systems_sectors_list[4])
+            if GameStatus.iteration == 20:
+                self.player_status.set_position_in_universe(StarSystemSectorFactory.star_systems_sectors_list[2])
+            if GameStatus.iteration == 30:
+                self.player_status.set_position_in_universe(StarSystemSectorFactory.star_systems_sectors_list[1])
+            if GameStatus.iteration == 40:
+                self.player_status.set_position_in_universe(StarSystemSectorFactory.star_systems_sectors_list[0])
             print("Iteration : ",GameStatus.iteration," main_clock = ",self.main_clock," iteration time = ",iteration_time," and sleep time : ",sleep_time)            
             GameStatus.move_to_next_iteration(self.subiterations)
             if GameStatus.iteration == self.max_iterations:

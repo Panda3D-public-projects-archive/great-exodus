@@ -20,11 +20,7 @@ if __name__ == '__main__':
         print("Player star system sector = ",star_system_sector.name)
         print("star_system_sector = ",star_system_sector)
         contr.set_player_position_in_universe(star_system_sector)
-        contr.display_universe()
-        contr.create_initial_movement_lists()
-    
-        print("Displaying only 10 first spaceships")
-    
+        contr.display_universe()    
         contr.start_main_loop()
         print("There was " + str(ShipFactory.number_of_ships()) + " ships to move")
     

@@ -17,5 +17,6 @@ class GraphicsObject(object):
         self.coordinates = coordinates
     
     def update_coordinates(self, coordinates):
-        print "Updating coordinates"
         
+        #print "Updating graphics coordinates"
+        pass

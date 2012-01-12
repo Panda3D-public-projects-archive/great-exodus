@@ -19,5 +19,8 @@ class GraphicsSpaceship(GraphicsObject):
         super(GraphicsSpaceship, self).__init__(ship.get_coordinates())
         self.move_observer = MoveObserver(self, ship)
         
+    def remove_self_from_observed(self):
+        self.move_observer.remove_self_from_observed()
+        
         
         

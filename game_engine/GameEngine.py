@@ -50,9 +50,9 @@ class GameEngine(object):
         
         MovementManager.move_ships_in_sector_random_accurately()
         i = GameStatus.subiteration
-        for i in range(GameStatus.subiteration,len(MovementManager.approximate_movement_ships), GameStatus.subiterations):
+        for i in range(GameStatus.subiteration,ShipFactory.number_of_ships(), GameStatus.subiterations):
             #print("My turn to fly")
-            MovementManager.move_ship_random_approximately(MovementManager.approximate_movement_ships[i])
+            MovementManager.move_ship_random_approximately(ShipFactory.get_ship(i))
         pass
             
     def create_galaxies(self, nb_galaxies = 1):

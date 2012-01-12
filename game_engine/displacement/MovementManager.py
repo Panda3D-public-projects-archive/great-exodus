@@ -4,8 +4,6 @@ Created on 9 nov. 2011
 @author: JD219546
 '''
 from random import randint
-from game_engine.factories.ShipFactory import ShipFactory
-from game_engine.PlayerStatus import PlayerStatus
 
 class MovementManager(object):
     '''
@@ -21,13 +19,7 @@ class MovementManager(object):
         '''
         Constructor
         '''
-        self.accurate_movement_sector = None
-        self.approximate_movement_ships = None
-        
-    def create_initial_movement_lists(self):      
-        self.accurate_movement_sector = PlayerStatus.current_star_system_sector
-        self.approximate_movement_ships = ShipFactory.get_ship_list()
-         
+        self.accurate_movement_sector = None      
                 
     def update_movement_lists(self, new_sector):
         self.accurate_movement_sector = new_sector

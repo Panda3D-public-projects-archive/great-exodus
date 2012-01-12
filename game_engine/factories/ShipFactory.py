@@ -8,6 +8,7 @@ from game_engine.displacement.Coordinates import Coordinates
 from game_engine.game_objects.database.ShipsDatabase import ShipsDatabase
 from game_engine.game_objects.spaceships.Spaceship import Spaceship
 from gui.GraphicsSpaceshipFactory import GraphicsSpaceshipFactory
+from game_engine.displacement.MovementManager import MovementManager
 
 
 class ShipFactory(object):
@@ -29,7 +30,6 @@ class ShipFactory(object):
         
     def create_ship(self, name, coordinates, star_system_sector, ship_properties):
         ship = Spaceship(name, coordinates, star_system_sector, ship_properties)
-        GraphicsSpaceshipFactory.create_graphics_spaceship(ship)
         self.ship_list.append(ship)
         star_system_sector.add_spaceship(ship)
         
@@ -51,5 +51,8 @@ class ShipFactory(object):
         
     def number_of_ships(self):
         return len(self.ship_list)
+    
+    def get_ship(self, index):
+        return self.ship_list[index]
     
 ShipFactory = ShipFactory()
